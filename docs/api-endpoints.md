@@ -29,12 +29,10 @@
 - `DELETE /api/posts/:id`
 
 ### Likes
-TODO: VERIFY THAT THESE SHOULD BE NESTED UNDER POSTS
 - `POST /api/posts/likes`
 - `DELETE /api/posts/likes/:id`
 
 ### Comments
-TODO: VERIFY THAT THESE SHOULD BE NESTED UNDER POSTS
 - `POST /api/posts/comments`
 - `DELETE /api/posts/comments/:id`
 

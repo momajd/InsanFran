@@ -1,4 +1,4 @@
-# InstaFran
+# InsanFran
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -55,7 +55,6 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] authentication
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
-- [ ] styling for login page
 
 ### Phase 2: Posts, Comments, and Likes (~3 days)
 
@@ -96,11 +95,7 @@ the API.
 - [ ] create the form to upload photos
 - [ ] finalize the form to submit posts (`postIndexItem` component)
 
-### Phase 6: Infinite Scroll (~0.5 days)
-
-**Objective:** At a minimum, users will have button to load more photos onto the page. Ideally, this will happen automatically as the user scrolls to the bottom of page.
-
-### Phase 7: Finalize Styling (~1 day)
+### Phase 6: Finalize Styling (~1 day)
 
 **Objective:** Make the site feel more cohesive and awesome.
 
@@ -109,6 +104,7 @@ the API.
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
+- [ ] Infinite Scroll
 - [ ] Allow users to choose how many photos to display on a single row
 - [ ] Add videos
 - [ ] Add tags
