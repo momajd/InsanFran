@@ -78,8 +78,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: InsanFran_production
-  username: InsanFran
-  password: <%= ENV['INSANFRAN_DATABASE_PASSWORD'] %>
+
+# Heroku ignores database.yml
+# production:
+#   <<: *default
+#   database: InsanFran_production
+#   username: InsanFran
+#   password: <%= ENV['INSANFRAN_DATABASE_PASSWORD'] %>
