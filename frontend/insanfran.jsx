@@ -12,6 +12,10 @@ var LoginForm = require('./components/LoginForm');
 // Mixins
 var CurrentUserState = require('./mixins/current_user_state');
 
+// TODO: remove after testing
+// window.PostStore = require('./stores/post_store');
+// window.ApiUtil = require('./util/api_util');
+
 var App = React.createClass({
   mixins: [CurrentUserState],
   render: function(){
