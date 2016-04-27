@@ -1,6 +1,6 @@
 # InsanFran
 
-[InsanFran][heroku]
+[Live Link][heroku]
 
 [heroku]: http://insanfran.herokuapp.com
 
