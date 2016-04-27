@@ -18,6 +18,7 @@ var App = React.createClass({
     return (
       <div>
         <header><h1>InsanFran</h1></header>
+        <LoginForm />
       </div>
     );
   }
