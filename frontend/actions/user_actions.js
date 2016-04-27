@@ -29,10 +29,6 @@ var UserActions = {
 		});
 	},
 
-	guestLogin: function(){
-		UserActions.login({username: "guest", password: "password"});
-	},
-
 	receiveCurrentUser: function(user){
 		AppDispatcher.dispatch({
 			actionType: UserConstants.LOGIN,

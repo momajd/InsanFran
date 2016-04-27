@@ -5,13 +5,6 @@ var CurrentUserState = require("../mixins/current_user_state");
 
 var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin, CurrentUserState],
-	getInitialState: function(){
-		return {form: "login"};
-	},
-
-	setForm: function(e){
-		this.setState({form: e.currentTarget.value});
-	},
 
   handleLogin: function(e){
     e.preventDefault();
@@ -29,13 +22,11 @@ var LoginForm = React.createClass({
     });
   },
 
-  // TODO: remove handleSubmit
-  handleSubmit: function(e){
+  handleGuest: function(e){
     e.preventDefault();
-    // this.state.form will choose the function within UserActions
-    UserActions[this.state.form]({
-      username: this.state.username,
-      password: this.state.password
+    UserActions.login({
+      username: "guest",
+      password: "password"
     });
   },
 
@@ -101,11 +92,18 @@ var LoginForm = React.createClass({
               onClick={this.handleSignUp}>
               Sign Up
             </button>
+
+            <button
+              className="guest-button"
+              onClick={this.handleGuest}>
+              Guest
+            </button>
           </section>
 
 				</form>
 		);
 	},
+
 	render: function(){
 		return (
 			<div id="login-form">
