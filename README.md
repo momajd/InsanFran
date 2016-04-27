@@ -18,7 +18,7 @@ InsanFran is a web application inspired by Instagram that will be built using Ru
 
 ## Product Goals and Priorities
 
-FresherNote will allow users to do the following:
+InsanFran will allow users to do the following:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
@@ -105,6 +105,7 @@ the API.
 
 ### Bonus Features (TBD)
 - [ ] Infinite Scroll
+- [ ] Add descriptions to posts
 - [ ] Allow users to choose how many photos to display on a single row
 - [ ] Add videos
 - [ ] Add tags
