@@ -1,6 +1,7 @@
 var React = require('react');
 var PostStore = require('../stores/post_store');
 var ClientActions = require('../actions/client_actions');
+var PostPicture = require('./PostPicture');
 
 var PostsIndex = React.createClass({
   getInitialState: function() {
@@ -18,7 +19,7 @@ var PostsIndex = React.createClass({
 
   render: function() {
     var posts = this.state.posts.map(function(post) {
-      return (<div>{post.image_url}</div>);
+      return (<PostPicture key={post.id} post={post} />);
     });
 
     return (
