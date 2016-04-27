@@ -9,6 +9,8 @@ var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 // Components
 var LoginForm = require('./components/LoginForm');
+var PostPicture = require('./components/PostPicture');
+var PostsIndex = require('./components/PostsIndex');
 // Mixins
 var CurrentUserState = require('./mixins/current_user_state');
 
@@ -23,18 +25,21 @@ var App = React.createClass({
       <div>
         <header><h1>InsanFran</h1></header>
         <LoginForm />
+        {this.props.children}
       </div>
     );
   }
 });
 
-var Router = (
+var router = (
   <Router history={hashHistory}>
-    <Router path="/" component={App} />
+    <Route path="/" component={App}>
+      <IndexRoute component={PostsIndex} />
+    </Route>
   </Router>
 );
 
 document.addEventListener('DOMContentLoaded', function(){
   var root = document.getElementById('content');
-  ReactDOM.render(Router, root);
+  ReactDOM.render(router, root);
 });
