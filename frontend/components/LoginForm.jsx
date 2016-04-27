@@ -8,20 +8,42 @@ var LoginForm = React.createClass({
 	getInitialState: function(){
 		return {form: "login"};
 	},
+
 	setForm: function(e){
 		this.setState({form: e.currentTarget.value});
 	},
-	handleSubmit: function(e){
-		e.preventDefault();
-		UserActions[this.state.form]({
-			username: this.state.username,
-			password: this.state.password
-		});
-	},
+
+  handleLogin: function(e){
+    e.preventDefault();
+    UserActions.login({
+      username: this.state.username,
+      password: this.state.password
+    });
+  },
+
+  handleSignUp: function(e){
+    e.preventDefault();
+    UserActions.signup({
+      username: this.state.username,
+      password: this.state.password
+    });
+  },
+
+  // TODO: remove handleSubmit
+  handleSubmit: function(e){
+    e.preventDefault();
+    // this.state.form will choose the function within UserActions
+    UserActions[this.state.form]({
+      username: this.state.username,
+      password: this.state.password
+    });
+  },
+
 	logout: function(e){
 		e.preventDefault();
 		UserActions.logout();
 	},
+
 	greeting: function(){
 		if (!this.state.currentUser) {
 			return;
@@ -33,6 +55,7 @@ var LoginForm = React.createClass({
 			</div>
 		);
 	},
+
 	errors: function(){
 		if (!this.state.userErrors){
 			return;
@@ -46,6 +69,7 @@ var LoginForm = React.createClass({
 		}
 		</ul>);
 	},
+
 	form: function(){
 		if (this.state.currentUser) {
 			return;
@@ -53,38 +77,32 @@ var LoginForm = React.createClass({
 		return(
 				<form onSubmit={this.handleSubmit}>
 					<section>
-						<label> Username:
-							<input
-                  type="text"
-                  valueLink={this.linkState("username")}/>
-						</label>
+						<input
+                type="text"
+                placeholder="Username"
+                valueLink={this.linkState("username")}/>
+            <br/>
 
-						<label> Password:
-							<input
-                type="password"
-                valueLink={this.linkState("password")}/>
-						</label>
+						<input
+              type="password"
+              placeholder="Password"
+              valueLink={this.linkState("password")}/>
 					</section>
 
-					<section>
-						<label> Login
-							<input
-                type="Radio"
-                name="action"
-                value="login"
-                onChange={this.setForm}/>
-						</label>
+          <section>
+            <button
+              className="login-button"
+              onClick={this.handleLogin}>
+              Sign In
+            </button>
 
-						<label> Sign Up
-							<input
-                type="Radio"
-                name="action"
-                value="signup"
-                onChange={this.setForm}/>
-						</label>
-					</section>
+            <button
+              className="signup-button"
+              onClick={this.handleSignUp}>
+              Sign Up
+            </button>
+          </section>
 
-					<input type="Submit" value="Submit"/>
 				</form>
 		);
 	},
