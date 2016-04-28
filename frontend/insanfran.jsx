@@ -1,7 +1,6 @@
 // React
 var React = require('react');
 var ReactDOM = require('react-dom');
-
 // Components
 var LoginForm = require('./components/auth/LoginForm');
 var RegisterApp = require('./components/auth/RegisterApp');
@@ -17,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var register = document.getElementById('register');
 
   // if rails controller redirects us to 'register', no user is logged in
+  // see static_pages_controller.rb
   if (root) {
     ReactDOM.render(AppRouter, root);
   } else {
