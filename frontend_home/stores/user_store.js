@@ -5,21 +5,6 @@ var UserStore = new Store(AppDispatcher);
 
 var _currentUser, _errors;
 
-UserStore.__onDispatch = function (payload) {
-  switch(payload.actionType) {
-    case "LOGIN":
-    	UserStore.login(payload.user);
-      break;
-    case "LOGOUT":
-    	UserStore.logout();
-      break;
-    case "ERROR":
-      UserStore.setErrors(payload.errors);
-      break;
-  }
-  UserStore.__emitChange();
-};
-
 UserStore.login = function(user){
 	_currentUser = user;
   _errors = null;
@@ -44,6 +29,21 @@ UserStore.errors = function(){
   if (_errors){
     return [].slice.call(_errors);
   }
+};
+
+UserStore.__onDispatch = function (payload) {
+  switch(payload.actionType) {
+    case "LOGIN":
+    	UserStore.login(payload.user);
+      break;
+    case "LOGOUT":
+    	UserStore.logout();
+      break;
+    case "ERROR":
+      UserStore.setErrors(payload.errors);
+      break;
+  }
+  UserStore.__emitChange();
 };
 
 module.exports = UserStore;

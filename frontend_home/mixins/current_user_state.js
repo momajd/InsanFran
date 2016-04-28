@@ -15,9 +15,10 @@ var CurrentUserState = {
 
 	componentDidMount: function(){
 		UserStore.addListener(this.updateUser);
-		if (typeof UserStore.currentUser() === 'undefined') {
-			UserActions.fetchCurrentUser();
-		}
+		// TODO:remove per ryan's advice
+		// if (typeof UserStore.currentUser() === 'undefined') {
+		// 	UserActions.fetchCurrentUser();
+		// }
 	},
 
 	updateUser: function(){
