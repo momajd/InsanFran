@@ -1,7 +1,7 @@
 var React = require("react");
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var UserActions = require("../actions/user_actions");
-var CurrentUserState = require("../mixins/current_user_state");
+var UserActions = require("../../actions/user_actions");
+var CurrentUserState = require("../../mixins/current_user_state");
 
 var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin, CurrentUserState],
@@ -30,6 +30,7 @@ var LoginForm = React.createClass({
     });
   },
 
+	// TODO: remove logout from this file
 	logout: function(e){
 		e.preventDefault();
 		UserActions.logout();

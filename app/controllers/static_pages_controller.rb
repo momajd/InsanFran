@@ -1,9 +1,18 @@
 class StaticPagesController < ApplicationController
+# if user is logged in, send to root; if logged out, send to register page
   def root
-    #TODO if not logged in redirect to register
+    if current_user
+      render :root
+    else
+      redirect_to :register
+    end
   end
 
   def register
-    # TODO: if logged in, redirect to root
+    unless current_user
+      render :register
+    else
+      redirect_to :root
+    end
   end
 end

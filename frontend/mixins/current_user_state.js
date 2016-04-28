@@ -22,8 +22,12 @@ var CurrentUserState = {
 			currentUser: UserStore.currentUser(),
 			userErrors: UserStore.errors()
 		});
-	}
 
+		//if current user exists, redirect to root
+		if (!$.this.state.currentUser.isEmptyObject) {
+			window.location = "/";
+		}
+	}
 };
 
 module.exports = CurrentUserState;
