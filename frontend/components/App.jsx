@@ -8,6 +8,7 @@ var hashHistory = ReactRouter.hashHistory;
 // Components
 var PostPicture = require('./PostPicture');
 var PostsIndex = require('./PostsIndex');
+var NavBar = require('./NavBar');
 // Mixins
 var CurrentUserState = require('../mixins/current_user_state');
 
@@ -16,6 +17,7 @@ var AppRouter = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={PostsIndex} />
+      // <Route path="navbar" component={NavBar} />
     </Route>
   </Router>
 );
@@ -26,7 +28,7 @@ var App = React.createClass({
     return (
       <div>
         <header><h1>InsanFran</h1></header>
-        <LoginForm />
+        // <NavBar />
         {this.props.children}
       </div>
     );

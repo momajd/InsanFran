@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var root = document.getElementById('content');
   var register = document.getElementById('register');
 
+  // if rails controller redirects us to 'register', no user is logged in
   if (root) {
     ReactDOM.render(AppRouter, root);
   } else {
