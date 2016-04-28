@@ -1,7 +1,7 @@
 ## Component Hierarchy
 
 * `App`
-  * `PostsIndex`
+  * `Index`
     * `PostIndexItem`
       * `PostHeader`
       * `PostPicture`
@@ -16,5 +16,5 @@
       * `UserPicture`
       * `FollowButton`
       * `UserDetails`
-    * `UserPostsIndex`
+    * `UserIndex`
       * `UserPostIndexItem`

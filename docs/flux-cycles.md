@@ -10,7 +10,7 @@ store listeners are listed at the end.
 ### Posts API Request Actions
 
 * `fetchAllPosts`
-  0. invoked from `PostsIndex` `didMount`/`willReceiveProps`
+  0. invoked from `Index` `didMount`/`willReceiveProps`
   0. `GET /api/posts` is called.
   0. `receiveAllPosts` is set as the callback.
 
@@ -45,7 +45,7 @@ store listeners are listed at the end.
 
 ### Store Listeners
 
-* `PostsIndex` component listens to `Post` store.
+* `Index` component listens to `Post` store.
 * `PostDetail` component listens to `Post` store.
 
 

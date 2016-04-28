@@ -9,7 +9,7 @@
 ## Nav Bar
 ![nav-bar]
 
-## PostsIndex / PostIndexItem
+## Index / PostIndexItem
 ![posts]
 
 ## User Profile

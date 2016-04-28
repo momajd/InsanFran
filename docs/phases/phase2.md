@@ -20,7 +20,7 @@
 
 ## Flux
 ### Views (React Components)
-* frontend/components/post/postsIndex.jsx
+* frontend/components/post/Index.jsx
 * frontend/components/post/postIndexItem.jsx
 * frontend/components/post/postHeader.jsx
 * frontend/components/post/postPicture.jsx

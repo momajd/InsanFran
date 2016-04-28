@@ -15,7 +15,7 @@
 * frontend/components/user/userHeader.jsx
 * frontend/components/user/userPicture.jsx
 * frontend/components/user/userDetails.jsx
-* frontend/components/user/userPostsIndex.jsx
+* frontend/components/user/userIndex.jsx
 * frontend/components/user/userPostIndexItem.jsx
 * frontend/components/user/followButton.jsx
 

@@ -1,11 +1,11 @@
 var React = require('react');
-var PostStore = require('../../stores/post_store');
-var ClientActions = require('../../actions/client_actions');
-var PostPicture = require('./PostPicture');
-var Post = require('./Post');
-var NavBar = require('../NavBar');
+var PostStore = require('../stores/post_store');
+var ClientActions = require('../actions/client_actions');
+var PostPicture = require('./post/PostPicture');
+var Post = require('./post/Post');
+var NavBar = require('./NavBar');
 
-var PostsIndex = React.createClass({
+var Index = React.createClass({
   getInitialState: function() {
     return {posts: PostStore.all()} ;
   },
@@ -33,4 +33,4 @@ var PostsIndex = React.createClass({
   }
 });
 
-module.exports = PostsIndex;
+module.exports = Index;

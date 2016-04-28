@@ -6,8 +6,7 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 // Components
-var PostPicture = require('./post/PostPicture');
-var PostsIndex = require('./post/PostsIndex');
+var Index = require('./Index');
 var NavBar = require('./NavBar');
 // Mixins
 var CurrentUserState = require('../mixins/current_user_state');
@@ -16,7 +15,7 @@ var CurrentUserState = require('../mixins/current_user_state');
 var AppRouter = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={PostsIndex} />
+      <IndexRoute component={Index} />
     </Route>
   </Router>
 );
