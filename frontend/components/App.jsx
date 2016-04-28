@@ -17,7 +17,6 @@ var AppRouter = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={PostsIndex} />
-      // <Route path="navbar" component={NavBar} />
     </Route>
   </Router>
 );
@@ -28,7 +27,6 @@ var App = React.createClass({
     return (
       <div>
         <header><h1>InsanFran</h1></header>
-        // <NavBar />
         {this.props.children}
       </div>
     );

@@ -4,8 +4,8 @@ var UserActions = require('../actions/user_actions');
 var NavBar = React.createClass({
   render: function () {
     return (
-      <header className="nav-header">
-        <nav className="profile-nav">
+      <header>
+        <nav>
           I am the Nav Bar
         </nav>
       </header>

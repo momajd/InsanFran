@@ -2,6 +2,7 @@ var React = require('react');
 var PostStore = require('../stores/post_store');
 var ClientActions = require('../actions/client_actions');
 var PostPicture = require('./PostPicture');
+var NavBar = require('./NavBar');
 
 var PostsIndex = React.createClass({
   getInitialState: function() {
@@ -24,6 +25,7 @@ var PostsIndex = React.createClass({
 
     return (
       <div>
+        <NavBar />
         {posts}
       </div>
     );
