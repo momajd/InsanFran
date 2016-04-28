@@ -22,9 +22,10 @@ var CurrentUserState = {
 			currentUser: UserStore.currentUser(),
 			userErrors: UserStore.errors()
 		});
-
+		debugger;
 		//if current user exists, redirect to root
 		if (!$.this.state.currentUser.isEmptyObject) {
+			debugger;
 			window.location = "/";
 		}
 	}

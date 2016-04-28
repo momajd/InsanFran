@@ -5,8 +5,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 
 var UserActions = {
 	fetchCurrentUser: function(){
-    // receiveCurrentUser gets passed to the ajax request as the success
-    // callback
+    // receiveCurrentUser gets passed to the ajax request as the success callback
     // handleError gets passed to the ajax request as the error callback
 		UserApiUtil.fetchCurrentUser(UserActions.receiveCurrentUser, UserActions.handleError);
 	},

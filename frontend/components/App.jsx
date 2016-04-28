@@ -6,8 +6,8 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 // Components
-var PostPicture = require('./PostPicture');
-var PostsIndex = require('./PostsIndex');
+var PostPicture = require('./post/PostPicture');
+var PostsIndex = require('./post/PostsIndex');
 var NavBar = require('./NavBar');
 // Mixins
 var CurrentUserState = require('../mixins/current_user_state');

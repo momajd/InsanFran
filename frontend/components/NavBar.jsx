@@ -6,7 +6,10 @@ var NavBar = React.createClass({
     return (
       <header>
         <nav>
-          I am the Nav Bar
+          <h1 className="logo-header">
+            <a href="#" className="logo">InsanFran</a>
+          </h1>
+          <button onClick={UserActions.logout}>Logout</button>
         </nav>
       </header>
     );
