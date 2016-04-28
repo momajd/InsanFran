@@ -7,6 +7,13 @@ var ServerActions = {
       actionType: PostConstants.POSTS_RECEIVED,
       posts: posts
     });
+  },
+
+  receiveComment: function(comment) {
+    AppDispatcher.dispatch({
+      actionType: PostConstants.COMMENT_RECEIVED,
+      comment: comment
+    });
   }
 };
 

@@ -8,6 +8,17 @@ var ApiUtil = {
         ServerActions.receiveAllPosts(posts);
       }
     });
+  },
+
+  createComment: function(comment) {
+    $.ajax({
+      url: "api/posts/" + comment.post_id + "/comments",
+      type: "POST",
+      data: {comment: comment},
+      success: function (commentData) {
+        ServerActions.receiveComment(commentData);
+      }
+    });
   }
 };
 

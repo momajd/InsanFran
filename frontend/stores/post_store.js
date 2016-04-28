@@ -13,6 +13,12 @@ var resetPosts = function(posts) {
   });
 };
 
+var addComment = function(comment) {
+  var post = _posts[comment.post_id];
+
+  post.comments.push(comment);
+};
+
 PostStore.all = function () {
   return Object.keys(_posts).map(function(id) {
     return _posts[id];
@@ -23,6 +29,10 @@ PostStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case PostConstants.POSTS_RECEIVED:
       resetPosts(payload.posts);
+      PostStore.__emitChange();
+      break;
+    case PostConstants.COMMENT_RECEIVED:
+      addComment(payload.comment);
       PostStore.__emitChange();
       break;
     default:

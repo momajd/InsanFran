@@ -12,11 +12,13 @@ var LoginForm = require('./components/auth/LoginForm');
 var RegisterApp = require('./components/auth/RegisterApp');
 var Index = require('./components/Index');
 var App = require('./components/App');
-
 // Make current user available to all components
-// TODO: ask ryan about how exactly the other components will have access to the user id;
 var UserActions = require('./actions/user_actions');
 UserActions.fetchCurrentUser();
+
+// TODO: remove after testing
+window.ApiUtil = require('./util/api_util');
+window.UserStore = require('./stores/user_store');
 
 var router = (
   <Router history={hashHistory}>
