@@ -14,6 +14,7 @@ var Index = require('./components/Index');
 var App = require('./components/App');
 
 // Make current user available to all components
+// TODO: ask ryan about how exactly the other components will have access to the user id;
 var UserActions = require('./actions/user_actions');
 UserActions.fetchCurrentUser();
 
