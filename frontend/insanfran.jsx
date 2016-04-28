@@ -20,7 +20,10 @@ UserActions.fetchCurrentUser();
 
 
 document.addEventListener('DOMContentLoaded', function(){
-  // write if statement root exists
   var root = document.getElementById('content');
-  ReactDOM.render(App, root);
+  if (root) {
+    ReactDOM.render(App, root);
+  } else {
+    // else render RegisterApp
+  }
 });
