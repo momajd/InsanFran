@@ -22,11 +22,12 @@ var CurrentUserState = {
 			currentUser: UserStore.currentUser(),
 			userErrors: UserStore.errors()
 		});
-		debugger;
-		//if current user exists, redirect to root
-		if (!$.this.state.currentUser.isEmptyObject) {
-			debugger;
+
+		//if current user exists and we are at the register page, redirect to root
+		if (UserStore.isLoggedIn() && window.location.pathname === "/register") {
 			window.location = "/";
+		} else if (!UserStore.isLoggedIn() && window.location.pathname === "/"){
+			window.location = "/register";
 		}
 	}
 };

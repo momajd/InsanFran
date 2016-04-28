@@ -3,16 +3,21 @@ var Store = require('flux/utils').Store;
 
 var UserStore = new Store(AppDispatcher);
 
-var _currentUser, _errors;
+var _currentUser = {};
+var  _errors = [];
 
 UserStore.login = function(user){
 	_currentUser = user;
-  _errors = null;
+  _errors = [];
 };
 
 UserStore.logout = function(){
-  _currentUser = null;
-  _errors = null;
+  _currentUser = {};
+  _errors = [];
+};
+
+UserStore.isLoggedIn = function() {
+	return Object.keys(_currentUser).length !==0 ;
 };
 
 UserStore.currentUser = function(){

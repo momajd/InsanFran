@@ -2,6 +2,7 @@ var React = require("react");
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var UserActions = require("../../actions/user_actions");
 var CurrentUserState = require("../../mixins/current_user_state");
+var UserStore = require('../../stores/user_store');
 
 var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin, CurrentUserState],
@@ -30,26 +31,9 @@ var LoginForm = React.createClass({
     });
   },
 
-	// TODO: remove logout from this file
-	logout: function(e){
-		e.preventDefault();
-		UserActions.logout();
-	},
-
-	greeting: function(){
-		if (!this.state.currentUser) {
-			return;
-		}
-		return (
-			<div>
-				<h2>Hi, {this.state.currentUser.username}!</h2>
-				<input type="submit" value="logout" onClick={this.logout}/>
-			</div>
-		);
-	},
-
+// TODO: clean up errors
 	errors: function(){
-		if (!this.state.userErrors){
+		if (UserStore.isLoggedIn()){
 			return;
 		}
 		var self = this;
@@ -63,9 +47,6 @@ var LoginForm = React.createClass({
 	},
 
 	form: function(){
-		if (this.state.currentUser) {
-			return;
-		}
 		return(
 				<form onSubmit={this.handleSubmit}>
 					<section>
@@ -102,13 +83,13 @@ var LoginForm = React.createClass({
           </section>
 
 				</form>
-		);
+			);
 	},
 
 	render: function(){
 		return (
 			<div id="login-form">
-				{this.greeting()}
+				<header><h1>InsanFran</h1></header>
 				{this.errors()}
 				{this.form()}
 			</div>
