@@ -5,8 +5,8 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       render :show
     else
-      # TODO: Verify this is correct
-      render json: @comment.errors.full_messages, status: 422
+      @errors = @comment.errors.full_messages
+      render "api/shared/error", status: 422
     end
   end
 
