@@ -1,0 +1,16 @@
+body {
+  background-color: #fafafa
+}
+
+#register {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#login-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #edeeee;
+}

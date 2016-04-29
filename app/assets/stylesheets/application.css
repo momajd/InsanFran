@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*
+html, body, div, span, content, article, stuff {
+  display: flex;
+  font: inherit;
+}
+
+html {
+  font; Arial
+}*/
