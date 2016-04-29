@@ -32,7 +32,10 @@ var ApiUtil = {
 
   deleteLike: function(like, success) {
     $.ajax({
-      url: "api/posts/" +
+      url: "api/posts/" + like.post_id + "/likes/" + like.id,
+      type: "DELETE",
+      data: {like: like},
+      success: success
     });
   }
 };

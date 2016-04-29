@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
-    #make sure like belongs to current user
+    #make sure like belongs to current user (otherwise susceptible to hacks)
     @like.user = current_user
 
     if @like.save
@@ -13,7 +13,11 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @like = current_user.likes.find(params[:id])
+    # @like = current_user.likes.find(params[:id])
+    @like = Like.find_by(
+      user_id: current_user.id,
+      post_id: like_params[:post_id]
+    )
 
     if @like.destroy
       render :show

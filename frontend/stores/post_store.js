@@ -47,6 +47,9 @@ PostStore.__onDispatch = function (payload) {
     case PostConstants.LIKE_RECEIVED:
       addLike(payload.like);
       break;
+    case PostConstants.LIKE_REMOVED:
+      deleteLike(payload.like);
+      break;
     default:
   }
   PostStore.__emitChange();

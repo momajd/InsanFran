@@ -37,7 +37,6 @@ var UserActions = {
 
 // TODO: not all error messages are going through; figure out why
 	handleError: function(error) {
-		// debugger;
 		AppDispatcher.dispatch({
 			actionType: UserConstants.ERROR,
 			errors: error.responseJSON.errors
