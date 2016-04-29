@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def create
-    #make sure we define an empy user if no params or passed, otherwise
+    #make sure we define an empty user if no params or passed, otherwise
     #@user.save won't create any errors
     @user = params[:user] ? User.new(user_params) : User.new
 

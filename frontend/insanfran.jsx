@@ -19,6 +19,7 @@ UserActions.fetchCurrentUser();
 // TODO: remove after testing
 window.ApiUtil = require('./util/api_util');
 window.UserStore = require('./stores/user_store');
+window.PostStore = require('./stores/post_store');
 
 var router = (
   <Router history={hashHistory}>

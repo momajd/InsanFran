@@ -19,6 +19,18 @@ var addComment = function(comment) {
   post.comments.push(comment);
 };
 
+// TODO make private function after testing
+PostStore.addLike = function(like) {
+  var post = _posts[like.post_id];
+  post.likes.push(like);
+};
+
+PostStore.deleteLike = function(like) {
+  var post = _posts[like.post_id];
+  var likeIdx = post.likes.indexOf(like);
+  post.likes.splice(likeIdx, 1);
+};
+
 PostStore.all = function () {
   return Object.keys(_posts).map(function(id) {
     return _posts[id];
@@ -29,15 +41,16 @@ PostStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case PostConstants.POSTS_RECEIVED:
       resetPosts(payload.posts);
-      PostStore.__emitChange();
       break;
     case PostConstants.COMMENT_RECEIVED:
       addComment(payload.comment);
-      PostStore.__emitChange();
+      break;
+    case PostConstants.LIKE_RECEIVED:
+      addLike(payload.like);
       break;
     default:
-
   }
+  PostStore.__emitChange();
 };
 
 module.exports = PostStore;
