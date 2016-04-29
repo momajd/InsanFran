@@ -4,4 +4,4 @@ json.user_id @like.user.id
 json.user @like.user.username
 
 # for testing
-# {id: 1, post_id: 1, user_id: 1, user: "guest"}
+# {post_id: 1, user_id: 2}

@@ -19,13 +19,12 @@ var addComment = function(comment) {
   post.comments.push(comment);
 };
 
-// TODO make private function after testing
-PostStore.addLike = function(like) {
+var addLike = function(like) {
   var post = _posts[like.post_id];
   post.likes.push(like);
 };
 
-PostStore.deleteLike = function(like) {
+var deleteLike = function(like) {
   var post = _posts[like.post_id];
   var likeIdx = post.likes.indexOf(like);
   post.likes.splice(likeIdx, 1);

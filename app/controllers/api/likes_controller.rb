@@ -1,6 +1,8 @@
 class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
+    #make sure like belongs to current user
+    @like.user = current_user
 
     if @like.save
       render :show
@@ -11,7 +13,7 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.find(params[:id])
+    @like = current_user.likes.find(params[:id])
 
     if @like.destroy
       render :show

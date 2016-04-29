@@ -20,6 +20,7 @@ UserActions.fetchCurrentUser();
 window.ApiUtil = require('./util/api_util');
 window.UserStore = require('./stores/user_store');
 window.PostStore = require('./stores/post_store');
+window.LikeActions = require('./actions/like_actions');
 
 var router = (
   <Router history={hashHistory}>

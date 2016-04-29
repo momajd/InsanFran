@@ -9,7 +9,6 @@ var LikeActions = {
 
   deleteLike: function (likeData) {
     ApiUtil.deleteLike(likeData, this.removeLike);
-
   },
 
   receiveLike: function (like) {
@@ -26,3 +25,5 @@ var LikeActions = {
     });
   }
 };
+
+module.exports = LikeActions;

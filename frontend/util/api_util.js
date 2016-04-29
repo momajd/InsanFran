@@ -1,5 +1,4 @@
 var ServerActions = require('../actions/server_actions');
-var LikeActions = require('../actions/like_actions');
 
 var ApiUtil = {
   fetchAllPosts: function(){
@@ -25,16 +24,15 @@ var ApiUtil = {
   createLike: function(like, success) {
     $.ajax({
       url: "api/posts/" + like.post_id + "/likes",
+      type: "POST",
       data: {like: like},
-      success: function(likeData) {
-        LikeActions.receiveLike(likeData);
-      }
+      success: success
     });
   },
 
-  deleteLike: function() {
+  deleteLike: function(like, success) {
     $.ajax({
-
+      url: "api/posts/" +
     });
   }
 };
