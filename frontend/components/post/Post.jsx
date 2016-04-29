@@ -7,7 +7,7 @@ var CommentForm = require('./CommentForm');
 var Post = React.createClass({
   render: function() {
     return (
-      <article>
+      <article className='post'>
         <PostHeader post={this.props.post}/>
         <PostPicture post={this.props.post}/>
         <CommentIndex post={this.props.post} />

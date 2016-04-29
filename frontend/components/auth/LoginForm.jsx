@@ -85,8 +85,8 @@ var LoginForm = React.createClass({
 
 	render: function(){
 		return (
-			<div id="login-form">
-				<header><h1>InsanFran</h1></header>
+			<div className="login-form">
+				<header><h1 className="login-logo">InsanFran</h1></header>
 				{this.errors()}
 				{this.form()}
 			</div>

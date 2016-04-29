@@ -1,16 +1,29 @@
-body {
-  background-color: #fafafa
-}
 
+// TODO change these to classes
 #register {
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
-#login-form {
+.login-form {
   background-color: white;
   display: flex;
   flex-direction: column;
   border: 1px solid #edeeee;
+}
+
+.login-form input {
+  border: 1px solid #edeeee;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  width: 220px;
+  font-family: sans-serif;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lobster Two', cursive;
 }
