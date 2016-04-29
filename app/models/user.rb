@@ -2,9 +2,10 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :session_token, presence: true
   validates :username, uniqueness: true
-  validates :password, length: {minimum: 6}, allow_nil: :true
+  validates :password, length: {minimum: 6, allow_nil: :true}
+  validate :password_presence, on: :create
 
   has_many :posts
   has_many :comments
@@ -45,7 +46,11 @@ class User < ActiveRecord::Base
 		SecureRandom.base64
 	end
 
-  # TODO: ask about this
+  #This will be displayed instead of the password_digest error message
+  def password_presence
+    errors.add(:password, "can't be blank") unless self.password_digest
+  end
+
   def ensure_session_token_uniqueness
 		while User.find_by(session_token: self.session_token)
 			self.session_token = new_session_token

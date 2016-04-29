@@ -31,7 +31,6 @@ var LoginForm = React.createClass({
     });
   },
 
-// TODO: errors not showing up when username and password blank
 	errors: function(){
 		var self = this;
 		return (<ul>

@@ -1,6 +1,10 @@
 class Api::SessionsController < ApplicationController
   def create
-    @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+    #only find user if user data is received
+    if params[:user]
+      @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+    end
+
     if @user
       login(@user)
       render "api/users/show"
@@ -30,18 +34,4 @@ class Api::SessionsController < ApplicationController
       render "api/shared/error", status: 404
     end
   end
-
-  # ryan's demo; won't use jbuilder file
-  # def show
-  #   token = session[:session_token]
-  #   @user = User.find({session_token: token})
-  #
-  #   if @user
-  #     # we are logged in
-  #     response = {logged_in: true, username: @user.username}
-  #     render json: response
-  #   else
-  #     # we are not logged in
-  #   end
-  # end
 end
