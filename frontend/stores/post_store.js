@@ -41,6 +41,9 @@ PostStore.__onDispatch = function (payload) {
     case PostConstants.POSTS_RECEIVED:
       resetPosts(payload.posts);
       break;
+    case PostConstants.POST_RECEIVED:
+      resetPosts(payload.post);
+      break;
     case PostConstants.COMMENT_RECEIVED:
       addComment(payload.comment);
       break;

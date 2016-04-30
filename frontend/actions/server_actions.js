@@ -9,6 +9,13 @@ var ServerActions = {
     });
   },
 
+  receivePost: function(post) {
+    AppDispatcher.dispatch({
+      actionType: PostConstants.POST_RECEIVED,
+      post: post
+    });
+  },
+
   receiveComment: function(comment) {
     AppDispatcher.dispatch({
       actionType: PostConstants.COMMENT_RECEIVED,

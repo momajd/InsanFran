@@ -5,6 +5,10 @@ var ClientActions = {
     ApiUtil.fetchAllPosts();
   },
 
+  createPost: function(post) {
+    ApiUtil.createPost(post);
+  },
+
   createComment: function(comment){
     ApiUtil.createComment(comment);
   }

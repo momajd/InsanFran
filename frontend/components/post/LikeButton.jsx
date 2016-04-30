@@ -42,7 +42,7 @@ var LikeButton = React.createClass({
     }
   },
 
-  // TODO: Probably want to replace the button with some kind of symbol
+  // TODO: Replace the button with some kind of symbol
   _buttonText: function() {
     if (this.state.liked) {
       return "Unlike";

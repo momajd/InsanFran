@@ -10,6 +10,17 @@ var ApiUtil = {
     });
   },
 
+  createPost: function(post) {
+    $.ajax({
+      url: "/api/posts/",
+      type: "POST",
+      data: {post: post},
+      success: function (postData) {
+        ServerActions.receivePost(postData);
+      }
+    });
+  },
+
   createComment: function(comment) {
     $.ajax({
       url: "api/posts/" + comment.post_id + "/comments",
