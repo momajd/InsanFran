@@ -1,13 +1,16 @@
 var React = require('react');
+var UserIndexStore = require('../../stores/user_index_store');
 
 var UserShow = React.createClass({
   getInitialState: function () {
-    return {user: UserStore.findById(this.props.params.id), posts: PostStore.all()};
+    return {user: UserIndexStore.findById(this.props.params.id)};
   },
 
   render: function() {
     return (
-      <ProfilePicture />
+      <div>
+        {this.state.user}
+      </div>
     );
   }
 

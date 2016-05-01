@@ -23,6 +23,9 @@ UserIndexStore.__onDispatch = function (payload) {
     case UserIndexConstants.USERS_RECEIVED:
       resetUsers(payload.users);
       break;
+    case UserIndexConstants.USER_RECEIVED:
+      //TODO: WHAT TO DO HERE?
+      break;
   }
   UserIndexStore.__emitChange();
 };

@@ -5,6 +5,10 @@ var ClientActions = {
     ApiUtil.fetchAllUsers();
   },
 
+  fetchUser: function() {
+    ApiUtil.fetchUser();
+  },
+
   fetchAllPosts: function() {
     ApiUtil.fetchAllPosts();
   },

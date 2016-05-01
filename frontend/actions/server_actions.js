@@ -3,10 +3,17 @@ var PostConstants = require('../constants/post_constants');
 var UserIndexConstants = require('../constants/user_index_constants');
 
 var ServerActions = {
-  receieveAllUsers: function(users) {
+  receiveAllUsers: function(users) {
     AppDispatcher.dispatch({
       actionType: UserIndexConstants.USERS_RECEIVED,
       users: users
+    });
+  },
+
+  receiveUser: function(user) {
+    AppDispatcher.dispatch({
+      actionType: UserIndexConstants.USER_RECEIVED,
+      user: user
     });
   },
 

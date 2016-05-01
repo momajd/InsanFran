@@ -5,10 +5,19 @@ var ApiUtil = {
 		$.ajax({
 			url: '/users',
 			success: function(users) {
-				ServerActions.receieveAllUsers(users);
+				ServerActions.receiveAllUsers(users);
 			}
 		});
 	},
+
+  fetchUser: function(user) {
+    $.ajax({
+      url: '/users/' + user.id,
+      success: function(userData) {
+        ServerActions.receiveUser(userData);
+      }
+    });
+  },
 
   fetchAllPosts: function(){
     $.ajax({
