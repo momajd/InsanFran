@@ -24,7 +24,6 @@ window.UserIndexStore = require('./stores/user_index_store');
 window.PostStore = require('./stores/post_store');
 window.ClientActions = require('./actions/client_actions');
 
-// TODO: Path to user page not working :(
 var router = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
