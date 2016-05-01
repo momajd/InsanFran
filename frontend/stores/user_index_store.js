@@ -14,8 +14,16 @@ var resetUsers = function(users) {
   });
 };
 
+var resetUser = function(user) {
+  _users[user.id] = user;
+};
+
 UserIndexStore.all = function() {
   return Object.assign({}, _users);
+};
+
+UserIndexStore.findById = function (id) {
+  return _users[id];
 };
 
 UserIndexStore.__onDispatch = function (payload) {
@@ -24,7 +32,7 @@ UserIndexStore.__onDispatch = function (payload) {
       resetUsers(payload.users);
       break;
     case UserIndexConstants.USER_RECEIVED:
-      //TODO: WHAT TO DO HERE?
+      resetUser(payload.user);
       break;
   }
   UserIndexStore.__emitChange();

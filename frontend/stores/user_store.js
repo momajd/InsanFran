@@ -28,10 +28,6 @@ UserStore.currentUser = function(){
   }
 };
 
-UserStore.findById = function (id) {
-	// TODO move to user_search_store
-};
-
 UserStore.setErrors = function(errors){
   _errors = errors;
 };

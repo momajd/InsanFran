@@ -19,6 +19,10 @@ var Index = React.createClass({
     ClientActions.fetchAllPosts();
   },
 
+  componentWillUnmount: function() {
+    this.postListener.remove();
+  },
+
   render: function() {
     var posts = this.state.posts.map(function(post) {
       return (<Post key={post.id} post={post} />);

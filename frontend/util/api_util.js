@@ -10,9 +10,9 @@ var ApiUtil = {
 		});
 	},
 
-  fetchUser: function(user) {
+  fetchUser: function(userId) {
     $.ajax({
-      url: '/users/' + user.id,
+      url: '/users/' + userId,
       success: function(userData) {
         ServerActions.receiveUser(userData);
       }

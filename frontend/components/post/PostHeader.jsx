@@ -1,7 +1,5 @@
 var React = require('react');
 
-// TODO: update links when profile page is made
-
 var PostHeader = React.createClass({
   render: function(){
     return (
