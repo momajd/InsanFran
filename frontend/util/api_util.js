@@ -1,6 +1,15 @@
 var ServerActions = require('../actions/server_actions');
 
 var ApiUtil = {
+  fetchAllUsers: function() {
+		$.ajax({
+			url: '/users',
+			success: function(users) {
+				ServerActions.receieveAllUsers(users);
+			}
+		});
+	},
+
   fetchAllPosts: function(){
     $.ajax({
       url: 'api/posts',

@@ -25,7 +25,8 @@ var UserApiUtil = {
 			success: success,
 			error: error
 		});
-	},
+	}
+
 };
 
 module.exports = UserApiUtil;

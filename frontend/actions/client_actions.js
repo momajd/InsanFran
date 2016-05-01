@@ -1,6 +1,10 @@
 var ApiUtil = require('../util/api_util.js');
 
 var ClientActions = {
+  fetchAllUsers: function() {
+    ApiUtil.fetchAllUsers();
+  },
+
   fetchAllPosts: function() {
     ApiUtil.fetchAllPosts();
   },

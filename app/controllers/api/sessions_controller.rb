@@ -1,6 +1,6 @@
 class Api::SessionsController < ApplicationController
   def create
-    #only find user if user data is received
+    #only find user if user data is received (without this, not all errors will show)
     if params[:user]
       @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     end

@@ -5,13 +5,15 @@ var UploadButton = require('./UploadButton');
 var NavBar = React.createClass({
   render: function () {
     return (
-      <header>
-        <nav>
+      <header className="nav-header">
+        <nav className="profile-nav">
           <h1 className="logo-header">
             <a href="#" className="logo">InsanFran</a>
           </h1>
-          <button onClick={UserActions.logout}>Logout</button>
-          <UploadButton />
+          <div className="nav-right">
+            <button onClick={UserActions.logout}>Logout</button>
+            <UploadButton />
+          </div>
         </nav>
       </header>
     );

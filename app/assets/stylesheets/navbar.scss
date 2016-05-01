@@ -1,0 +1,25 @@
+.logo-header > a {
+  font-family: 'Lobster Two', cursive;
+  text-decoration: none;
+}
+
+.nav-header {
+  margin: 0;
+  padding: 0;
+  background: white;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.profile-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lobster Two', cursive;
+}

@@ -1,3 +1,5 @@
+// NB: this store is only for keeping track of Auth; see user_search_store
+// for all Users
 var AppDispatcher = require('../dispatcher/dispatcher.js');
 var Store = require('flux/utils').Store;
 
@@ -24,6 +26,10 @@ UserStore.currentUser = function(){
   if (_currentUser) {
   	return $.extend({}, _currentUser);
   }
+};
+
+UserStore.findById = function (id) {
+	// TODO move to user_search_store
 };
 
 UserStore.setErrors = function(errors){

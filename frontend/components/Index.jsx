@@ -24,11 +24,8 @@ var Index = React.createClass({
       return (<Post key={post.id} post={post} />);
     });
 
-// TODO:Remove navbar from index
-
     return (
       <div className="index">
-        <NavBar />
         {posts}
       </div>
     );
