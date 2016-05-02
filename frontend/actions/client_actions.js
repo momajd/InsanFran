@@ -19,7 +19,16 @@ var ClientActions = {
 
   createComment: function(comment){
     ApiUtil.createComment(comment);
+  },
+
+  createFollow: function(follow) {
+    ApiUtil.createFollow(follow);
+  },
+
+  deleteFollow: function(follow) {
+    ApiUtil.deleteFollow(follow);
   }
+
 };
 
 module.exports = ClientActions;

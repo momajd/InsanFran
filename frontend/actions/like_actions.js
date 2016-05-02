@@ -2,6 +2,7 @@ var AppDispatcher = require('../dispatcher/dispatcher.js');
 var PostConstants = require('../constants/post_constants');
 var ApiUtil = require('../util/api_util');
 
+// TODO move these to client_actions & server_actions
 var LikeActions = {
   createLike: function (likeData) {
     ApiUtil.createLike(likeData, this.receiveLike);

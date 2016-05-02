@@ -66,6 +66,17 @@ var ApiUtil = {
       data: {like: like},
       success: success
     });
+  },
+
+  createFollow: function(relationship) {
+    $.ajax({
+      url: "api/relationships",
+      type: "POST",
+      data: {relationship: relationship},
+      success: function(relationshipData) {
+        ServerActions.receiveFollow(relationshipData);
+      }
+    });
   }
 };
 
