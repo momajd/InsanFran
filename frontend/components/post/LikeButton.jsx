@@ -32,7 +32,8 @@ var LikeButton = React.createClass({
     return liked;
   },
 
-  _toggleLike: function() {
+  _toggleLike: function(e) {
+    e.preventDefault();
     var likeData = {post_id: this.props.post.id};
 
     if (this.state.liked) {

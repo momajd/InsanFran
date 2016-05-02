@@ -1,6 +1,7 @@
 var React = require('react');
 var UserActions = require('../actions/user_actions');
 var UploadButton = require('./UploadButton');
+var SearchBar = require('./SearchBar');
 
 var NavBar = React.createClass({
   render: function () {
