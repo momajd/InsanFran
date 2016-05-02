@@ -21,12 +21,12 @@ var ClientActions = {
     ApiUtil.createComment(comment);
   },
 
-  createFollow: function(follow) {
-    ApiUtil.createFollow(follow);
+  createFollow: function(relationship) {
+    ApiUtil.createFollow(relationship);
   },
 
-  deleteFollow: function(follow) {
-    ApiUtil.deleteFollow(follow);
+  deleteFollow: function(relationship) {
+    ApiUtil.deleteFollow(relationship);
   }
 
 };

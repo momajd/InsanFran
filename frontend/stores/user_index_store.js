@@ -21,15 +21,13 @@ var resetUser = function(user) {
 
 var addFollower = function(relationship) {
   var user = _users[relationship.followed_id];
-
-  // user.followed = true;
   user.followers.push(UserStore.currentUser() );
 };
 
 var removeFollower = function(relationship) {
   var user = UserIndexStore.findById(relationship.followed_id);
-
-
+  var followerIdx = user.followers.indexOf(UserStore.currentUser() );
+  user.followers.splice(followerIdx, 1);
 };
 
 UserIndexStore.all = function() {

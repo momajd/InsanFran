@@ -38,17 +38,17 @@ var ServerActions = {
     });
   },
 
-  receiveFollow: function(follow) {
+  receiveFollow: function(relationship) {
     AppDispatcher.dispatch({
       actionType: UserIndexConstants.FOLLOW_RECEIVED,
-      follow: follow
+      relationship: relationship
     });
   },
 
-  removeFollow: function(follow) {
+  removeFollow: function(relationship) {
     AppDispatcher.dispatch({
       actionType: UserIndexConstants.FOLLOW_REMOVED,
-      follow: follow
+      relationship: relationship
     });
   }
 };
