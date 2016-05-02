@@ -10,7 +10,7 @@ json.array! @posts do |post|
   time = time_in_hours.to_s + "h" if time_in_minutes >= 60
   time = time_in_days.to_s + "d" if time_in_hours >= 24
   time = time_in_weeks.to_s + "w" if time_in_days >= 7
-  
+
   json.id post.id
   json.image_url post.image_url
   json.user_id post.user_id

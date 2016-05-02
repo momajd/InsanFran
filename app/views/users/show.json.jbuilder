@@ -29,3 +29,13 @@ json.posts @user.posts do |post|
     json.body comment.body
   end
 end
+
+json.followers @user.followers do |follower|
+  json.id follower.id
+  json.username follower.username
+end
+
+json.following @user.following do |followed_user|
+  json.id followed_user.id
+  json.username followed_user.username
+end
