@@ -20,10 +20,21 @@ class User < ActiveRecord::Base
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-
-
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
+
+  #TODO: delete if not being used
+  # def follow(other_user)
+  #   active_relationships.create(followed_id: other_user.id)
+  # end
+  #
+  # def unfollow(other_user)
+  #   active_relationships.find_by(followed_id: other_user.id).destroy
+  # end
+  #
+  # def following?(other_user)
+  #   self.following.include?(other_user)
+  # end
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
