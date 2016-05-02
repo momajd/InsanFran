@@ -6,7 +6,7 @@ var ProfileHeader = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="profile-header">
         <ProfilePicture user={this.props.user} />
         <UserInfo user={this.props.user} />
       </div>

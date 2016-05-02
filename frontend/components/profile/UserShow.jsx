@@ -32,7 +32,7 @@ var UserShow = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="user-show">
         <ProfileHeader user={this.state.user} />
         <ProfilePostIndex user={this.state.user} />
       </div>

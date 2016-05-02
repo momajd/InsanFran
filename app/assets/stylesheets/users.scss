@@ -25,3 +25,20 @@
   width: auto;
   height: 100%;
 }
+
+.user-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header {
+  display: flex;
+  position: relative;
+  padding: 40px;
+}
+
+.user-info {
+  width: 400px;
+  margin-left: 60px
+}
