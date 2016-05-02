@@ -1,15 +1,15 @@
 class Api::RelationshipsController < ApplicationController
 
   def create
-    debugger;
     @relationship = Relationship.new(relationship_params)
     render :show if @relationship.save
   end
 
   def destroy
-    @relationship = Relationship
-      .where("followed_id = ? AND follower_id = ?", params[:id], current_user.id)
-      .first
+    @relationship = Relationship.find_by(
+      follower_id: relationship_params[:follower_id],
+      followed_id: relationship_params[:followed_id]
+    )
     render :show if @relationship.destroy
   end
 

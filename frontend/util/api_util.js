@@ -77,6 +77,17 @@ var ApiUtil = {
         ServerActions.receiveFollow(relationshipData);
       }
     });
+  },
+
+  deleteFollow: function(relationship) {
+    $.ajax({
+      url: "api/relationships/" + relationship.id,
+      type: "DELETE",
+      data: {relationship: relationship},
+      success: function(relationshipData) {
+        ServerActions.removeFollow(relationshipData);
+      }
+    });
   }
 };
 
