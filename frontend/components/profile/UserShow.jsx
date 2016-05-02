@@ -1,6 +1,8 @@
 var React = require('react');
 var UserIndexStore = require('../../stores/user_index_store');
 var ClientActions = require('../../actions/client_actions');
+var ProfileHeader = require('./ProfileHeader');
+var ProfilePostIndex = require('./ProfilePostIndex');
 
 var UserShow = React.createClass({
   getStateFromStore: function () {
@@ -31,7 +33,8 @@ var UserShow = React.createClass({
   render: function() {
     return (
       <div>
-        {this.state.user.username}
+        <ProfileHeader user={this.state.user} />
+        <ProfilePostIndex user={this.state.user} />
       </div>
     );
   }
