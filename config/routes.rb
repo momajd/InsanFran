@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # use get when creating custom resources
   get :register, to: 'static_pages#register'
 
-  # TODO: check that this is ok
   resources :users, defaults: {format: :json}, only: [:index, :show, :update]
 
   namespace :api, defaults: {format: :json} do
