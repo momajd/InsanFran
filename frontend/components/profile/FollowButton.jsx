@@ -54,7 +54,7 @@ var FollowButton = React.createClass({
     if (this.props.user.id === UserStore.currentUser().id ||
         Object.keys(this.props.user).length === 0) {
       //don't render anything if user is at their own page
-      //also don't render under user exists
+      //also don't render until user exists
       return;
     } else {
       return (

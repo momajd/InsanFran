@@ -38,10 +38,46 @@
   padding: 40px;
 }
 
-.user-info {
+.user-info-box {
   width: 400px;
   margin-left: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.user-info-box h1 {
+  font-weight: normal;
+  font-size: 34px;
+  // font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.user-info-box h3 {
+  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.profile-header-name {
+  display: flex;
+  align-items: center;
+}
+
+.follow-button-box {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.user-stats-number {
+  font-weight: 700;
 }

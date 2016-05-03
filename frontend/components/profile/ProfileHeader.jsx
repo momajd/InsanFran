@@ -1,7 +1,6 @@
 var React = require('react');
 var UserInfo = require('./UserInfo');
 var ProfilePicture = require('./ProfilePicture');
-var FollowButton = require('./FollowButton');
 
 var ProfileHeader = React.createClass({
 
@@ -11,7 +10,6 @@ var ProfileHeader = React.createClass({
       <div className="profile-header">
         <ProfilePicture user={this.props.user} />
         <UserInfo user={this.props.user} />
-        <FollowButton user={this.props.user}/>
       </div>
     );
   }
