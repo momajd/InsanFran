@@ -16,7 +16,7 @@ var UserShow = require('./components/profile/UserShow');
 // Make current user available to all components
 var UserActions = require('./actions/user_actions');
 UserActions.fetchCurrentUser();
-
+  
 // TODO: remove after testing
 window.ApiUtil = require('./util/api_util');
 window.UserStore = require('./stores/user_store');

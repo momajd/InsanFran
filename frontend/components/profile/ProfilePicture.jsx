@@ -35,7 +35,7 @@ var ProfilePicture = React.createClass({
     var emptyImageUrl = "http://res.cloudinary.com/dfqqsmub8/image/upload/w_200,h_200,c_thumb,g_face/empty_image.jpg";
     var url = this.props.user.profile_image_url || emptyImageUrl;
     return (
-      <button
+      <button className="profile-image-button"
         onClick={this.handleUploadPicture}>
         <img className="profile-image"
              title="Change Profile Picture"

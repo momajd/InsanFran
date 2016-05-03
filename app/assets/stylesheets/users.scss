@@ -26,6 +26,18 @@
   height: 100%;
 }
 
+.profile-image-button {
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+}
+
+// TODO: need to find better approach
+.profile-image {
+  width: auto;
+  height: 100%;
+}
+
 .user-show {
   display: flex;
   flex-direction: column;
