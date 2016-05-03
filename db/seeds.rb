@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 guest = User.create!([
-  {username: "guest", password: "password", name: "Guest"},
-  {username: "momajd", password: "password", name: "Mo"}
+  {username: "guest", password: "password", name: "Awesome Guest"},
+  {username: "momajd", password: "password", name: "Mo Majd"}
 ])
 
 posts = Post.create!([

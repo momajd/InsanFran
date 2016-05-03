@@ -4,19 +4,20 @@ var UserStore = require('../../stores/user_store');
 var ClientActions = require('../../actions/client_actions');
 
 var FollowButton = React.createClass({
+
   getInitialState: function() {
     return {followed: false };
   },
 
   componentDidMount: function() {
-    this.listener = UserIndexStore.addListener(this._onChange);
+    this.listener = UserIndexStore.addListener(this._updateFollowedState);
   },
 
   componentWillUnmount: function() {
     this.listener.remove();
   },
 
-  _onChange: function() {
+  _updateFollowedState: function() {
     this.setState({followed: this._isFollowed() });
   },
 
@@ -35,8 +36,7 @@ var FollowButton = React.createClass({
     return isFollowed;
   },
 
-  _toggleFollow: function(e) {
-    e.preventDefault();
+  _toggleFollow: function() {
     var relationshipData = {
       follower_id: UserStore.currentUser().id,
       followed_id: this.props.user.id
@@ -49,23 +49,49 @@ var FollowButton = React.createClass({
     }
   },
 
-  _buttonText: function (){
-    if (this.state.followed) {
-      return "Unfollow";
+  _buttonDisplay: function (){
+
+    if (this.props.user.id === UserStore.currentUser().id ||
+        Object.keys(this.props.user).length === 0) {
+      //don't render anything if user is at their own page
+      //also don't render under user exists
+      return;
     } else {
-      return "Follow";
+      return (
+        <input type="checkbox"
+               checked={this.state.followed}
+               onChange={this._toggleFollow}/>
+      );
     }
   },
 
   render: function() {
-
     return (
-      <button onClick={this._toggleFollow}>
-        {this._buttonText()}
-      </button>
+      <div>
+        {this._buttonDisplay()}
+      </div>
     );
   }
 
 });
 
 module.exports = FollowButton;
+
+// OLD BORING BUTTON
+// _buttonDisplay: function (){
+//   if (this.props.user.id === UserStore.currentUser().id) {
+//     return; //don't render anything if user is at their own page
+//   } else if (this.state.followed) {
+//     return (
+//       <button className="unfollow_button" onClick={this._toggleFollow}>
+//         Following
+//       </button>
+//     );
+//   } else {
+//     return (
+//       <button className="follow_button" onClick={this._toggleFollow}>
+//         Follow
+//       </button>
+//     );
+//   }
+// },

@@ -1,4 +1,5 @@
 var React = require('react');
+var UserStats = require('./UserStats');
 
 var UserInfo = React.createClass({
 
@@ -7,6 +8,7 @@ var UserInfo = React.createClass({
       <div className="user-info">
         <h1>{this.props.user.username}</h1>
         <h3>{this.props.user.name}</h3>
+        <UserStats user={this.props.user} />
       </div>
     );
   }
