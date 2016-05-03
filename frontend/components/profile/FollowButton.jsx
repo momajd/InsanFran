@@ -9,31 +9,20 @@ var FollowButton = React.createClass({
     return {followed: false };
   },
 
-  componentDidMount: function() {
-    this.listener = UserIndexStore.addListener(this._updateFollowedState);
+  // componentDidMount: function() {
+  //   this.listener = UserIndexStore.addListener(this._updateFollowedState);
+  // },
+
+  componentWillReceiveProps: function(newProps) {
+    this.setState({followed: UserIndexStore.userIsFollowed(newProps.user)} );
   },
 
-  componentWillUnmount: function() {
-    this.listener.remove();
-  },
+  // componentWillUnmount: function() {
+  //   this.listener.remove();
+  // },
 
   _updateFollowedState: function() {
     this.setState({followed: this._isFollowed() });
-  },
-
-  _isFollowed: function() {
-    var currentUser = UserStore.currentUser();
-    var isFollowed = false;
-
-    // First flux cycle will not have a user
-    if (Object.keys(this.props.user).length !== 0) {
-      this.props.user.followers.forEach(function(follower) {
-        if (follower.id === currentUser.id) {
-          isFollowed = true;
-        }
-      });
-    }
-    return isFollowed;
   },
 
   _toggleFollow: function() {

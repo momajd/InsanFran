@@ -30,6 +30,18 @@ var removeFollower = function(relationship) {
   user.followers.splice(followerIdx, 1);
 };
 
+UserIndexStore.userIsFollowed = function(user) {
+  var currentUser = UserStore.currentUser();
+  var isFollowed = false;
+
+  user.followers.forEach(function(follower) {
+    if (follower.id === currentUser.id) {
+      isFollowed = true;
+    }
+  });
+  return isFollowed;
+};
+
 UserIndexStore.all = function() {
   return Object.assign({}, _users);
 };
