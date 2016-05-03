@@ -88,6 +88,17 @@ var ApiUtil = {
         ServerActions.removeFollow(relationshipData);
       }
     });
+  },
+
+  updateProfileImageUrl: function(url, userId) {
+    $.ajax({
+      url: "/users/" + userId,
+      type: "PATCH",
+      data: {user: {profile_image_url: url} },
+      success: function(userData) {
+        ServerActions.receiveUser(userData);
+      }
+    });
   }
 };
 

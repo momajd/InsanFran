@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get :register, to: 'static_pages#register'
 
   # TODO: check that this is ok
-  resources :users, defaults: {format: :json}, only: [:index, :show]
+  resources :users, defaults: {format: :json}, only: [:index, :show, :update]
 
   namespace :api, defaults: {format: :json} do
     resource :user, only: [:create, :show, :update]

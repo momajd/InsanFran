@@ -27,6 +27,10 @@ var ClientActions = {
 
   deleteFollow: function(relationship) {
     ApiUtil.deleteFollow(relationship);
+  },
+
+  updateProfileImageUrl: function(url, userId) {
+    ApiUtil.updateProfileImageUrl(url, userId);
   }
 
 };
