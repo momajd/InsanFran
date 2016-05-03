@@ -9,20 +9,12 @@ var FollowButton = React.createClass({
     return {followed: false };
   },
 
-  // componentDidMount: function() {
-  //   this.listener = UserIndexStore.addListener(this._updateFollowedState);
-  // },
-
+  // ran into bug with using listener on the UserIndexStore (the listener was
+  // not set off on the before the inital render of the button, so the button
+  // would always start as 'Follow') This way ensures the button will receive
+  // the correct props before rendering
   componentWillReceiveProps: function(newProps) {
     this.setState({followed: UserIndexStore.userIsFollowed(newProps.user)} );
-  },
-
-  // componentWillUnmount: function() {
-  //   this.listener.remove();
-  // },
-
-  _updateFollowedState: function() {
-    this.setState({followed: this._isFollowed() });
   },
 
   _toggleFollow: function() {
@@ -65,22 +57,3 @@ var FollowButton = React.createClass({
 });
 
 module.exports = FollowButton;
-
-// OLD BORING BUTTON
-// _buttonDisplay: function (){
-//   if (this.props.user.id === UserStore.currentUser().id) {
-//     return; //don't render anything if user is at their own page
-//   } else if (this.state.followed) {
-//     return (
-//       <button className="unfollow_button" onClick={this._toggleFollow}>
-//         Following
-//       </button>
-//     );
-//   } else {
-//     return (
-//       <button className="follow_button" onClick={this._toggleFollow}>
-//         Follow
-//       </button>
-//     );
-//   }
-// },

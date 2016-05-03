@@ -30,6 +30,7 @@ var removeFollower = function(relationship) {
   user.followers.splice(followerIdx, 1);
 };
 
+// See FollowButton component
 UserIndexStore.userIsFollowed = function(user) {
   var currentUser = UserStore.currentUser();
   var isFollowed = false;
