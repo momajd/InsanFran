@@ -68,6 +68,8 @@
 .comment-index-item {
   display: flex;
   align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .comment-username {
@@ -81,6 +83,16 @@
 }
 
 .comment-form {
+  display: flex;
+  align-items: center;
+  // margin-top: 10px;
+  height: 70px;
+}
+
+.comment-field {
+  border: none;
+  font-size: medium;
+  width: 500px;
 }
 
 .like-button {
