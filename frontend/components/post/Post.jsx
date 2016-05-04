@@ -22,3 +22,6 @@ var Post = React.createClass({
 });
 
 module.exports = Post;
+
+// Tim demo
+// <PostHeader location="top" post={this.props.post}/>

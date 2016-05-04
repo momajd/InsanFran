@@ -1,20 +1,21 @@
 
 // TODO change these to classes
-#register {
+.register-page {
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 .login-form {
-  background-color: white;
+  z-index: 2;
+  position: absolute;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  border: 1px solid #edeeee;
 }
 
-.login-form input {
-  border: 1px solid #edeeee;
+.login-form > input {
   border-radius: 3px;
   font-size: 14px;
   padding: 9px 8px 7px;
@@ -23,7 +24,17 @@
 }
 
 .login-logo {
-  display: flex;
-  justify-content: center;
+  color: white;
+  font-size: 180px;
   font-family: 'Lobster Two', cursive;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: 500px;
+  width: auto;
 }
