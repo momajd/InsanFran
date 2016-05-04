@@ -18,7 +18,7 @@ json.posts @user.posts do |post|
 
   json.id post.id
   json.image_url post.image_url
-  json.user @user.username
+  json.username @user.username
   json.user_id @user.id
   json.created_time_ago time
 
