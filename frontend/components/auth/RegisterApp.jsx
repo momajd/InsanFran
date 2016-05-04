@@ -6,7 +6,6 @@ var RegisterApp = React.createClass({
     return (
       <div className="register-page">
         <LoginForm />
-        <img className="login-background" src="http://i.imgur.com/AYg2O.gif" />
       </div>
     );
   }

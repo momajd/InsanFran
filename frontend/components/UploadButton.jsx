@@ -16,13 +16,10 @@ var UploadButton = React.createClass({
 
   render: function() {
     return (
-      <div></div>
+      <button onClick={this.upload}>Upload Image</button>
     );
   }
 
 });
 
 module.exports = UploadButton;
-
-
-// <button onClick={this.upload}>Upload Image</button>
