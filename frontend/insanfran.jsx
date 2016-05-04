@@ -1,6 +1,7 @@
 // React
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Modal = require('react-modal');
 // Router
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
@@ -16,7 +17,7 @@ var UserShow = require('./components/profile/UserShow');
 // Make current user available to all components
 var UserActions = require('./actions/user_actions');
 UserActions.fetchCurrentUser();
-  
+
 // TODO: remove after testing
 window.ApiUtil = require('./util/api_util');
 window.UserStore = require('./stores/user_store');
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // if rails controller redirects us to 'register', no user is logged in
   // see static_pages_controller.rb
   if (root) {
+    Modal.setAppElement(document.body);
     ReactDOM.render(router, root);
   } else {
     ReactDOM.render(<RegisterApp />, register);

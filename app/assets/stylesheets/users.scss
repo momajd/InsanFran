@@ -93,3 +93,16 @@
 .user-stats-number {
   font-weight: 700;
 }
+
+.modal-picture {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.modal-picture > img {
+  width: auto;
+  height: 100%;
+}

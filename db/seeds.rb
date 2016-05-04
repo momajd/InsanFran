@@ -8,7 +8,10 @@
 
 guest = User.create!([
   {username: "guest", password: "password", name: "Awesome Guest"},
-  {username: "mo_majd", password: "password", name: "Mo Majd"}
+  {username: "mo_majd", password: "password", name: "Mo Majd"},
+  {username: "d_tanner", password: "password", name: "Danny Tanner"},
+  {username: "g_newsom", password: "password", name: "Gavin Newsom"},
+  {username: "oprah", password: "password", name: "Oprah Winfrey"},
 ])
 
 posts = Post.create!([
