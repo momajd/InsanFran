@@ -1,5 +1,5 @@
 var React = require('react');
-var CommentForm = require('./CommentForm');
+var CommentInput = require('./CommentInput');
 var CommentIndex = require('./CommentIndex');
 var CommentIndexItem = require('./CommentIndexItem');
 var LikeCount = require('./LikeCount');
@@ -13,7 +13,7 @@ var CommentBox = React.createClass({
         <LikeCount post={this.props.post}/>
         <LikeButton post={this.props.post}/>
         <CommentIndex post={this.props.post} />
-        <CommentForm post={this.props.post} />
+        <CommentInput post={this.props.post} />
       </div>
     );
   }

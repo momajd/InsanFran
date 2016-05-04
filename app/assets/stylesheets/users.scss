@@ -7,7 +7,8 @@
 .profile-post-index {
   display: flex;
   justify-content: space-between;
-  width: 1000px;
+  width: 90%;
+  max-width: 1000px;
   margin: auto;
   flex-wrap: wrap;
 }

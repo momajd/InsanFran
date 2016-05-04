@@ -10,6 +10,7 @@
   height: 600px;
   overflow: hidden;
   // this will make photos square without scaling
+
 }
 
 .post-picture > img {
@@ -70,12 +71,19 @@
 }
 
 .comment-username {
-  padding-left: 10px;
   color: #125688;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
 }
 
 .comment-body {
-  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.comment-form {
+}
+
+.like-button {
+  height: 30px;
+  width: 30px;
 }

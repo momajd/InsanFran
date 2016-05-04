@@ -53,12 +53,19 @@ var LikeButton = React.createClass({
   },
 
   render: function() {
+    // TODO: Change source for likes
+    var source = this.state.liked ? "http://res.cloudinary.com/dsolojfgkabc/image/upload/valentines-heart_ccvqqz.png" :
+                                    "http://res.cloudinary.com/dsolojfgkabc/image/upload/heart-shape-silhouette_sprx13.png";
     return (
-      <button onClick={this._toggleLike}>
-        {this._buttonText()}
-      </button>
+      <div className="like-button">
+        <img src={source} onClick={this._toggleLike} />
+      </div>
     );
   }
 });
 
 module.exports = LikeButton;
+
+// <button onClick={this._toggleLike}>
+//   {this._buttonText()}
+// </button>
