@@ -1,8 +1,8 @@
 json.id @post.id
 json.image_url @post.image_url
 json.user_id @post.user_id
-json.name @post.user.username
-json.username @post.user.name
+json.username @post.user.username
+json.name @post.user.name
 
 json.comments @post.comments do |comment|
   json.id comment.id
