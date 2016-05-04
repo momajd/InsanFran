@@ -21,6 +21,24 @@
   width: 600px;
   height: 64px;
   background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-timestamp {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin-right: 20px;
+  color: #a5a7aa;
+}
+
+.post-header-username {
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
 .post {

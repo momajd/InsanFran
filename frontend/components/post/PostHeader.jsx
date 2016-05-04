@@ -4,10 +4,12 @@ var PostHeader = React.createClass({
   render: function(){
     return (
       <header className="post-header">
-        <a href={"#/users/" + this.props.post.user_id}>
+        <a className="post-header-username"
+           href={"#/users/" + this.props.post.user_id}>
           {this.props.post.username}
         </a>
-        <div className="timestamp">
+
+        <div className="post-timestamp">
           {this.props.post.created_time_ago}
         </div>
       </header>
