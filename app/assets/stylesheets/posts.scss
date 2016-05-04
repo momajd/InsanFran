@@ -39,6 +39,7 @@
   font-weight: 700;
   margin-left: 20px;
   text-decoration: none;
+  color: #125688;
 }
 
 .post {
@@ -57,4 +58,24 @@
   max-width: 600px;
   width: 100%;
   padding-top: 60px;
+}
+
+.comment-box {
+  padding: 20px;
+}
+
+.comment-index-item {
+  display: flex;
+  align-items: center;
+}
+
+.comment-username {
+  padding-left: 10px;
+  color: #125688;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.comment-body {
+  padding-left: 10px;
 }
