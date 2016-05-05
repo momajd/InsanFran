@@ -13,7 +13,7 @@ var ClientActions = {
     ApiUtil.fetchAllPosts();
   },
 
-  // TODO: write fetchPost function
+  // TODO: write fetchPost function (see ProfilePostPicture component)
 
   createPost: function(post) {
     ApiUtil.createPost(post);

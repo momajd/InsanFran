@@ -51,6 +51,18 @@ UserIndexStore.findById = function (id) {
   return _users[id];
 };
 
+// TODO: filter should be done on the back end 
+UserIndexStore.filterSearch = function(searchInput) {
+  var searchResults = [];
+
+  Object.keys(_users).forEach(function(id) {
+    if (_users[id].username.includes(searchInput) ) {
+      searchResults.push(_users[id]);
+    }
+  });
+  return searchResults;
+};
+
 UserIndexStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case UserIndexConstants.USERS_RECEIVED:

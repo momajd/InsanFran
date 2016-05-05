@@ -5,11 +5,13 @@ var ClientActions = require('../actions/client_actions');
 var SearchBar = React.createClass({
 
   getInitialState: function() {
-    return {users: {}, search: "", results: {}};
+    return {search: ""};
   },
 
-  onChange: function() {
-    this.setState({users: UserIndexStore.all()});
+  onChange: function(e) {
+    if (e) {
+      this.setState({search: e.target.value} );
+    }
   },
 
   componentWillMount: function() {
@@ -17,10 +19,34 @@ var SearchBar = React.createClass({
     this.listener = UserIndexStore.addListener(this.onChange);
   },
 
+  getSearchResults: function() {
+    var userResults = UserIndexStore.filterSearch(this.state.search);
+
+    if (this.state.search !== "" ) {
+      return userResults.map(function(user) {
+        return (
+          <div key={user.id} className="user-search-result">
+            {user.username}
+          </div>
+        );
+      });
+    }
+  },
+
   render: function() {
     return (
       <div>
-        <input></input>
+        <input
+          type="text"
+          placeholder="Search"
+          className="search-field"
+          value={this.state.search}
+          onChange={this.onChange}>
+        </input>
+
+        <div className="user-search-box">
+          {this.getSearchResults()}
+        </div>
       </div>
     );
   }
