@@ -12,7 +12,7 @@ var CommentInput = React.createClass({
 
   handleSubmit: function(event) {
     event.preventDefault();
-
+    debugger;
     var commentData = {
       user_id: UserStore.currentUser().id,
       post_id: this.props.post.id,

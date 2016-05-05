@@ -107,11 +107,6 @@
   height: 100%;
 }
 
-.modal-post-show {
-
-}
-
-// TODO: take out width since making a container
 .modal-post-info .post-header {
   width: 335px;
   height: 64px;
@@ -126,4 +121,11 @@
   height: 496px;
   padding: 20px;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-post-info .comment-index-box {
+  height: 400px;
 }

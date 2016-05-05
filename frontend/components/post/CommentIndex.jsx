@@ -15,7 +15,7 @@ var CommentIndex = React.createClass({
      });
 
      return (
-       <div>
+       <div className="comment-index-box">
          {comments}
        </div>
      );

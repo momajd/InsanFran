@@ -19,7 +19,7 @@ var addPost = function(post) {
 
 var addComment = function(comment) {
   var post = _posts[comment.post_id];
-
+  debugger;
   post.comments.push(comment);
 };
 
