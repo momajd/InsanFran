@@ -25,7 +25,7 @@ var CommentInput = React.createClass({
   render: function () {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="comment-form">
+        <form onSubmit={this.handleSubmit}>
           <input
             className="comment-field"
             type="text"

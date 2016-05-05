@@ -46,7 +46,6 @@ var LikeButton = React.createClass({
   render: function() {
     var className = this.state.liked ? "fa fa-heart fa-2x filled-heart" :
                                        "fa fa-heart-o fa-2x empty-heart";
-
     return (
       <div className="like-button">
         <i onClick={this._toggleLike} className={className}></i>

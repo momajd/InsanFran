@@ -16,10 +16,15 @@ var UploadButton = React.createClass({
 
   render: function() {
     return (
-      <button onClick={this.upload}>Upload Image</button>
+      <i className="fa fa-camera fa-2x create-post-button"
+         onClick={this.upload}>
+      </i>
     );
   }
 
 });
 
 module.exports = UploadButton;
+
+// TODO: delete
+// <button onClick={this.upload}>Upload Image</button>

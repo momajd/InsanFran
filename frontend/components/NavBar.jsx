@@ -2,9 +2,11 @@ var React = require('react');
 var UserActions = require('../actions/user_actions');
 var UploadButton = require('./UploadButton');
 var SearchBar = require('./SearchBar');
+var UserStore = require('../stores/user_store');
 
 var NavBar = React.createClass({
   render: function () {
+    var currentUserId = UserStore.currentUser().id;
     return (
       <header className="nav-header">
         <nav className="profile-nav">
@@ -12,8 +14,16 @@ var NavBar = React.createClass({
             <a href="#" className="logo">InsanFran</a>
           </h1>
           <div className="nav-right">
-            <button onClick={UserActions.logout}>Logout</button>
             <UploadButton />
+
+            <a href={"#/users/" + currentUserId}>
+              <i className="fa fa-user fa-2x user-icon"></i>
+            </a>
+
+            <i className="fa fa-sign-out fa-2x logout-button"
+               onClick={UserActions.logout}
+               aria-hidden="true">
+            </i>
           </div>
         </nav>
       </header>

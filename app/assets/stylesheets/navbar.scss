@@ -18,3 +18,24 @@
   justify-content: space-around;
   height: 70px;
 }
+
+.create-post-button {
+  cursor: pointer;
+  color: #125688;
+}
+
+.logout-button {
+  cursor: pointer;
+  color: #125688;
+}
+
+.nav-right {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-icon {
+  cursor: pointer;
+  color: #125688;
+}
