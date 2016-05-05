@@ -36,7 +36,7 @@ var LoginForm = React.createClass({
 		return (<ul>
 		{
 			Object.keys(this.state.userErrors).map(function(key, i){
-				return (<li key={i}>{self.state.userErrors[key]}</li>);
+				return (<li key={i} className="error-message">{self.state.userErrors[key]}</li>);
 			})
 		}
 		</ul>);
@@ -44,7 +44,7 @@ var LoginForm = React.createClass({
 
 	form: function(){
 		return(
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleSubmit} className="login-form">
 					<section>
 						<input
                 type="text"
@@ -60,21 +60,23 @@ var LoginForm = React.createClass({
 
           <section>
             <button
-              className="login-button"
+              className="login-signup-button"
               onClick={this.handleLogin}>
               Sign In
             </button>
 
             <button
-              className="signup-button"
+              className="login-signup-button"
               onClick={this.handleSignUp}>
               Sign Up
             </button>
+					</section>
 
+					<section>
             <button
               className="guest-button"
               onClick={this.handleGuest}>
-              Guest
+              Log In As Guest
             </button>
           </section>
 
@@ -84,7 +86,7 @@ var LoginForm = React.createClass({
 
 	render: function(){
 		return (
-			<div className="login-form">
+			<div className="login-content">
 				<header><h1 className="login-logo">InsanFran</h1></header>
 				{this.errors()}
 				{this.form()}

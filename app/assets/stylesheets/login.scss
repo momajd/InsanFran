@@ -1,5 +1,6 @@
 
 #register {
+  display: flex;
   width: 100vw;
   height: 100vh;
   background: url("http://i.imgur.com/AYg2O.gif");
@@ -10,26 +11,72 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  z-index: 2;
 }
 
 .login-form {
-  z-index: 2;
-  // position: absolute;
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.login-form > input {
-  border-radius: 3px;
+.login-form input {
+  border-radius: 4px;
   font-size: 14px;
   padding: 9px 8px 7px;
   width: 220px;
   font-family: sans-serif;
+  border: none;
+  margin: 5px;
+  background: white;
+}
+
+.login-signup-button {
+  transition: background-color ease-in-out 0.5s;
+  width: 100px;
+  color: white;
+  background-color: #4090DB;
+  padding: 6px;
+  margin: 6px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+.login-signup-button:hover {
+  background-color: #3F51B5;
+}
+
+.guest-button {
+  transition: background-color ease-in-out 0.5s;
+  width: 220px;
+  color: white;
+  background-color: #4090DB;
+  padding: 6px;
+  margin: 6px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+.guest-button:hover {
+  background-color: #3F51B5;
 }
 
 .login-logo {
   color: white;
   font-size: 180px;
   font-family: 'Lobster Two', cursive;
+}
+
+.error-message {
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
