@@ -1,4 +1,5 @@
-.logo-header > a {
+.logo-header {
+  width: 160px; //make same as nav-right width for flex box centering
   font-family: 'Lobster Two', cursive;
   text-decoration: none;
   font-size: 26px;
@@ -38,4 +39,34 @@
 .user-icon {
   cursor: pointer;
   color: #125688;
+}
+
+.search-field {
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 2px;
+  border: 1px solid rgb(238, 238, 238);
+  text-align: center;
+  font-weight: 200;
+  font-size: 14px;
+  width: 200px;
+}
+
+.user-search-box {
+  z-index: 2;
+  position: absolute;
+  width: 240px;
+  max-height: 200px;
+}
+
+.user-search-result {
+  height: 40px;
+  border: solid 1px lightblue;
+  border-radius: 4px;
+  background: white;
+  overflow: auto;
+}
+
+.user-search-result:hover {
+  background: lightblue;
 }

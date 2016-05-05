@@ -25,8 +25,9 @@ var SearchBar = React.createClass({
     if (this.state.search !== "" ) {
       return userResults.map(function(user) {
         return (
-          <div key={user.id} className="user-search-result">
-            {user.username}
+          <div key={user.id}
+               className="user-search-result">
+            <a href={"#/users/" + user.id}>{user.username}</a>
           </div>
         );
       });
@@ -38,7 +39,7 @@ var SearchBar = React.createClass({
       <div>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="San Franciscans"
           className="search-field"
           value={this.state.search}
           onChange={this.onChange}>
