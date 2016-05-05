@@ -2,12 +2,23 @@ var React = require('react');
 var Modal = require('react-modal');
 var ModalPostInfo = require('../profile/ModalPostInfo');
 var CommentIndex = require('../post/CommentIndex');
+var PostStore = require('../../stores/post_store');
+var ClientActions = require('../../actions/client_actions');
 
 
 var ProfilePostPicture = React.createClass({
 
   getInitialState: function () {
-    return {modalOpen: false};
+    return {modalOpen: false, post: this.props.post};
+  },
+
+  onChange: function() {
+    this.setState({post: PostStore.getById(this.props.post.id)});
+  },
+
+  componentDidMount: function() {
+    this.postListener = PostStore.addListener(this.onChange);
+    ClientActions.fetchAllPosts();
   },
 
   _handleClick: function() {
@@ -32,7 +43,7 @@ var ProfilePostPicture = React.createClass({
             <img src={this.props.post.image_url} />
           </div>
 
-          <ModalPostInfo post={this.props.post} />
+          <ModalPostInfo post={this.state.post} />
         </Modal>
       </div>
     );

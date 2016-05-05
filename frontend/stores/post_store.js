@@ -39,6 +39,10 @@ PostStore.all = function () {
   });
 };
 
+PostStore.getById = function(postId) {
+  return _posts[postId];
+};
+
 PostStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case PostConstants.POSTS_RECEIVED:
@@ -48,7 +52,6 @@ PostStore.__onDispatch = function (payload) {
       addPost(payload.post);
       break;
     case PostConstants.COMMENT_RECEIVED:
-    debugger;
       addComment(payload.comment);
       break;
     case PostConstants.LIKE_RECEIVED:
