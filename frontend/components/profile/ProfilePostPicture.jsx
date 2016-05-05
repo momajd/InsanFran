@@ -1,7 +1,8 @@
 var React = require('react');
 var Modal = require('react-modal');
-var ModalHeader = require('../profile/ModalHeader');
+var ModalPostInfo = require('../profile/ModalPostInfo');
 var CommentIndex = require('../post/CommentIndex');
+
 
 var ProfilePostPicture = React.createClass({
 
@@ -31,7 +32,7 @@ var ProfilePostPicture = React.createClass({
             <img src={this.props.post.image_url} />
           </div>
 
-          <ModalHeader post={this.props.post} />
+          <ModalPostInfo post={this.props.post} />
         </Modal>
       </div>
     );

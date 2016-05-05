@@ -107,8 +107,13 @@
   height: 100%;
 }
 
+.modal-post-show {
+
+}
+
+// TODO: take out width since making a container
 .modal-post-header {
-  width: 332px;
+  width: 335px;
   height: 64px;
   background: white;
   display: flex;
