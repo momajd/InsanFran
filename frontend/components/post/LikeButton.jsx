@@ -43,29 +43,16 @@ var LikeButton = React.createClass({
     }
   },
 
-  // TODO: Replace the button with some kind of symbol
-  _buttonText: function() {
-    if (this.state.liked) {
-      return "Unlike";
-    } else {
-      return "Like";
-    }
-  },
-
   render: function() {
-    // TODO: Change source for likes
-    var source = this.state.liked ? "http://res.cloudinary.com/dsolojfgkabc/image/upload/valentines-heart_ccvqqz.png" :
-                                    "http://res.cloudinary.com/dsolojfgkabc/image/upload/heart-shape-silhouette_sprx13.png";
+    var className = this.state.liked ? "fa fa-heart fa-2x filled-heart" :
+                                       "fa fa-heart-o fa-2x empty-heart";
+
     return (
       <div className="like-button">
-        <img src={source} onClick={this._toggleLike} />
+        <i onClick={this._toggleLike} className={className}></i>
       </div>
     );
   }
 });
 
 module.exports = LikeButton;
-
-// <button onClick={this._toggleLike}>
-//   {this._buttonText()}
-// </button>

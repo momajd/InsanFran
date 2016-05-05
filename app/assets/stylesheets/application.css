@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+
+ *= require font-awesome
  */
+
 
  body {
    background-color: #fafafa;
@@ -20,14 +23,6 @@
    padding: 0;
    font-family: sans-serif;
  }
-
-/** TODO: reset defaults and style buttons
-/*button {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-}*/
-
 
 /*Follow Button*/
 /* Chrome, Safari, Opera */

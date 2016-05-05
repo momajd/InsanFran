@@ -96,7 +96,22 @@
   padding: 10px;
 }
 
+
+.like-count {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
 .like-button {
   height: 30px;
-  width: 30px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.filled-heart {
+  color: red;
+}
+
+.empty-heart {
+  color: gray;
 }

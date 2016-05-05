@@ -13,7 +13,7 @@ var LikeCount = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="like-count">
         {this.likeCount()}
       </div>
     );
