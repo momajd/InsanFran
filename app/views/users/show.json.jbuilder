@@ -4,6 +4,7 @@ json.name @user.name
 json.profile_image_url @user.profile_image_url
 
 json.posts @user.posts do |post|
+  # all this info must be provided so we can access it on the user's show page
   time_in_seconds = (Time.now.to_i - Time.at(post.created_at).to_i)
   time_in_minutes = time_in_seconds / 60
   time_in_hours = time_in_minutes / 60
@@ -27,6 +28,13 @@ json.posts @user.posts do |post|
     json.user comment.user.username
     json.user_id comment.user_id
     json.body comment.body
+  end
+
+  json.likes post.likes do |like|
+    json.id like.id
+    json.user_id like.user_id
+    json.user like.user.username
+    json.post_id  like.post_id
   end
 end
 

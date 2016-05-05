@@ -1,12 +1,14 @@
 var React = require('react');
-var ModalHeader = require('./ModalHeader');
+var PostHeader = require('../post/PostHeader');
+var CommentBox = require('../post/CommentBox');
 
 var ModalPostInfo = React.createClass({
 
   render: function() {
     return (
       <div className="modal-post-info">
-        <ModalHeader post={this.props.post}/>
+        <PostHeader post={this.props.post}/>
+        <CommentBox post={this.props.post}/>
       </div>
     );
   }

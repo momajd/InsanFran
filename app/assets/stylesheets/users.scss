@@ -112,11 +112,18 @@
 }
 
 // TODO: take out width since making a container
-.modal-post-header {
+.modal-post-info .post-header {
   width: 335px;
   height: 64px;
   background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.modal-post-info .comment-box {
+  width: 295px;
+  height: 496px;
+  padding: 20px;
+  background: white;
 }
