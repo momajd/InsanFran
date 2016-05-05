@@ -13,6 +13,9 @@ var NavBar = React.createClass({
           <h1 className="logo-header">
             <a href="#" className="logo">InsanFran</a>
           </h1>
+
+          <SearchBar />
+
           <div className="nav-right">
             <UploadButton />
 
