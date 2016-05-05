@@ -1,9 +1,7 @@
 var React = require('react');
 var PostStore = require('../stores/post_store');
 var ClientActions = require('../actions/client_actions');
-var PostPicture = require('./post/PostPicture');
 var Post = require('./post/Post');
-var NavBar = require('./NavBar');
 
 var Index = React.createClass({
   getInitialState: function() {

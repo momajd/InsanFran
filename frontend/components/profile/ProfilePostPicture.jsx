@@ -9,7 +9,7 @@ var ClientActions = require('../../actions/client_actions');
 var ProfilePostPicture = React.createClass({
 
   getInitialState: function () {
-    return {modalOpen: false, post: this.props.post};
+    return {modalOpen: false, post: {} };
   },
 
   onChange: function() {
@@ -19,6 +19,11 @@ var ProfilePostPicture = React.createClass({
   componentDidMount: function() {
     this.postListener = PostStore.addListener(this.onChange);
     ClientActions.fetchAllPosts();
+    // TODO: replace with fetchPost when written
+  },
+
+  componentWillUnmount: function() {
+    this.postListener.remove();
   },
 
   _handleClick: function() {
@@ -72,7 +77,6 @@ var customStyle = {
     flexDirection              : 'row',
     border                     : 'none',
     background                 : 'none',
-    overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '4px',
     outline                    : 'none',

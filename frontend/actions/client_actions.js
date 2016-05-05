@@ -13,7 +13,7 @@ var ClientActions = {
     ApiUtil.fetchAllPosts();
   },
 
-  // TODO: fetchPost
+  // TODO: write fetchPost function
 
   createPost: function(post) {
     ApiUtil.createPost(post);

@@ -25,6 +25,11 @@
 .profile-post-picture > img {
   width: auto;
   height: 100%;
+  cursor: pointer;
+}
+
+.profile-post-picture > img:hover {
+  -webkit-filter: grayscale(100%);
 }
 
 .profile-image-button {
