@@ -19,7 +19,6 @@ var addPost = function(post) {
 
 var addComment = function(comment) {
   var post = _posts[comment.post_id];
-  debugger;
   post.comments.push(comment);
 };
 
@@ -49,6 +48,7 @@ PostStore.__onDispatch = function (payload) {
       addPost(payload.post);
       break;
     case PostConstants.COMMENT_RECEIVED:
+    debugger;
       addComment(payload.comment);
       break;
     case PostConstants.LIKE_RECEIVED:
