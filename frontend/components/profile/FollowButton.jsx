@@ -31,7 +31,6 @@ var FollowButton = React.createClass({
   },
 
   _buttonDisplay: function (){
-
     if (this.props.user.id === UserStore.currentUser().id ||
         Object.keys(this.props.user).length === 0) {
       //don't render anything if user is at their own page

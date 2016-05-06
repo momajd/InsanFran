@@ -9,14 +9,20 @@ var SearchBar = React.createClass({
   },
 
   onChange: function(e) {
-    if (e) {
-      this.setState({search: e.target.value} );
-    }
+    this.setState({search: e.target.value} );
   },
 
   componentWillMount: function() {
     ClientActions.fetchAllUsers();
-    this.listener = UserIndexStore.addListener(this.onChange);
+  },
+
+  // TODO: remove if can't get onBlur to work
+  onBlur: function() {
+    this.setState({search: ""});
+  },
+
+  resetOnClick: function(e) {
+    this.setState({search: ""});
   },
 
   getSearchResults: function() {
@@ -25,10 +31,13 @@ var SearchBar = React.createClass({
     if (this.state.search !== "" ) {
       return userResults.map(function(user) {
         return (
-          <div key={user.id}
-               className="user-search-result">
-            <a href={"#/users/" + user.id}>{user.username}</a>
-          </div>
+          <a key={user.id}
+             href={"#/users/" + user.id}>
+
+            <div className="user-search-result">
+              {user.username}
+            </div>
+          </a>
         );
       });
     }
@@ -45,7 +54,7 @@ var SearchBar = React.createClass({
           onChange={this.onChange}>
         </input>
 
-        <div className="user-search-box">
+        <div className="user-search-box" onClick={this.resetOnClick}>
           {this.getSearchResults()}
         </div>
       </div>
@@ -53,5 +62,6 @@ var SearchBar = React.createClass({
   }
 
 });
+// onBlur={this.onBlur}>
 
 module.exports = SearchBar;
