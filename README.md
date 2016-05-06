@@ -1,119 +1,29 @@
 # InsanFran
 
-[Live Link][heroku]
+## [Live Link][heroku]
 
 [heroku]: http://insanfran.herokuapp.com
 
-## Minimum Viable Product
+InsanFran is a full-stack web application that provides a platform for sharing San Francisco photography. It was inspired by Instagram.
 
-InsanFran is a web application inspired by Instagram that will be built using Ruby on Rails and React.js. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+The backend was created with Ruby on Rails using a PostgreSQL database; the frontend utilizes React.js and Flux architecture. All styling was done using CSS/SCSS.
 
-- [X] New account creation, login, and guest/demo login
-- [X] Smooth, bug-free navigation
-- [X] Adequate seed data to demonstrate the site's features
-- [X] The minimally necessary features for an Instagram-inspired site, allowing users to: upload photos; follow other users; create, read, and delete posts; like posts; create, read, and delete comments
-- [X] Hosting on Heroku
-- [X] CSS styling that is satisfactorily visually appealing
-- [ ] A production README, replacing this README
+## Features
 
-## Product Goals and Priorities
+### Log in & Log out / Frontend Auth
 
-InsanFran will allow users to do the following:
+On the backend in rails, the BCrypt library is used to hash passwords (only hashed passwords are stored in the database).  A session token is created for the user each time they log in so that they can be remembered as the current user.
 
-<!-- This is a Markdown checklist. Use it to keep track of your
-progress. Put an x between the brackets for a checkmark: [x] -->
+```Ruby
+def password=(password)
+  self.password_digest = BCrypt::Password.create(password)
+  @password = password
+end
 
-- [X] Create an account (MVP)
-- [X] Log in / Log out, including as a Guest/Demo User (MVP)
-- [X] Profile picture and profile (MVP)
-- [X] Connect with other users (MVP)
-- [X] Create, read, and delete posts (MVP)
-- [ ] Infinite scroll (expected feature, but not MVP)
-- [ ] Option to fit more photos on display (bonus feature, if time allows)
+def password_is?(password)
+  BCrypt::Password.new(self.password_digest).is_password?(password)
+end
+```
+On the frontend, flux cycles are set up to fetch the current user, login, logout, and create a new user.
 
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-
-[views]: ./docs/views.md
-[components]: ./docs/components.md
-[flux-cycles]: ./docs/flux-cycles.md
-[api-endpoints]: ./docs/api-endpoints.md
-[schema]: ./docs/schema.md
-
-## Implementation Timeline
-
-### Phase 1: User Authentication (~1 day)
-
-**Objective:** Functioning rails project with Authentication
-
-- [X] create new project
-- [X] create `User` model
-- [X] authentication
-- [X] user signup/signin pages
-- [X] blank landing page after signin
-
-### Phase 2: Posts, Comments, and Likes (~3 days)
-
-**Objective:** Posts can be created, read, edited and destroyed through
-the API.
-
-- [X] create `Post`, `Comment`, and `Like` model
-- [X] seed the database with a small amount of test data
-- [X] CRUD API for posts (`PostsController`)
-- [X] jBuilder views for Posts, Comments, and Likes
-- [X] setup `APIUtil` to interact with the API
-- [X] test out API interaction in the console.
-- [X] setup the flux loop with skeleton files
-- [X] setup React Router
-
-### Phase 3: User profile and relationships (~3 days)
-
-**Objective:** Users have a profile page to see their posts and can connect with other users
-
-- [X] create `Relationship` model
-- [X] jBuilder views for all Profile Components
-- [X] setup `clientActions` and `serverActions`
-- [X] display posts on User's profile page
-
-
-### Phase 4: Navigation Bar (~1 day)
-
-**Objective:** All pages have functional navigation bar
-
-- [X] create a basic style guide
-- [X] position elements on the page
-- [X] add basic colors & styles
-
-### Phase 5: Upload photos through UI (~1 day)
-
-**Objective:** Users can upload photos and create posts through the UI
-
-- [X] create the form to upload photos
-- [X] finalize the form to submit posts (`postIndexItem` component)
-
-### Phase 6: Finalize Styling (~1 day)
-
-**Objective:** Make the site feel more cohesive and awesome.
-
-- [X] Get feedback on my UI from others
-- [X] Refactor HTML classes & CSS rules
-- [X] Add modals, transitions, and other styling flourishes.
-
-### Bonus Features (TBD)
-- [ ] Infinite Scroll
-- [ ] React-Masonry
-- [ ] Add descriptions to posts
-- [ ] Allow users to choose how many photos to display on a single row
-- [ ] Add videos
-- [ ] Add tags
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
-[phase-five]: ./docs/phases/phase6.md
+![Login](/docs/images/login_page.png)
