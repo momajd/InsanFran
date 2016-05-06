@@ -144,3 +144,19 @@ comments = Comment.create!([
     Like.create({user_id: user_id, post_id: post_ids.shuffle.pop})
   end
 end
+
+(1..User.all.length).each do |follower_id|
+  #say each user follows between 5 and 10 people
+  total_following = rand(5..10)
+
+  users_to_follow = []
+
+  until users_to_follow.length == total_following
+    random_user_id = rand(1..User.all.length)
+    users_to_follow << random_user_id unless users_to_follow.include?(random_user_id)
+  end
+
+  users_to_follow.each do |followed_id|
+    Relationship.create({follower_id: follower_id, followed_id: followed_id})
+  end
+end
