@@ -9,11 +9,11 @@
 InsanFran is a web application inspired by Instagram that will be built using Ruby on Rails and React.js. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [X] New account creation, login, and guest/demo login
-- [X] Smooth, bug-free navigation
-- [X] Adequate seed data to demonstrate the site's features
-- [X] The minimally necessary features for an Instagram-inspired site, allowing users to: upload photos; follow other users; create, read, and delete posts; like posts; create, read, and delete comments
+- [ ] Smooth, bug-free navigation
+- [ ] Adequate seed data to demonstrate the site's features
+- [ ] The minimally necessary features for an Instagram-inspired site, allowing users to: upload photos; follow other users; create, read, and delete posts; like posts; create, read, and delete comments
 - [X] Hosting on Heroku
-- [X] CSS styling that is satisfactorily visually appealing
+- [ ] CSS styling that is satisfactorily visually appealing
 - [ ] A production README, replacing this README
 
 ## Product Goals and Priorities
@@ -25,9 +25,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [X] Create an account (MVP)
 - [X] Log in / Log out, including as a Guest/Demo User (MVP)
-- [X] Profile picture and profile (MVP)
-- [X] Connect with other users (MVP)
-- [X] Create, read, and delete posts (MVP)
+- [ ] Profile picture and profile (MVP)
+- [ ] Connect with other users (MVP)
+- [ ] Create, read, and delete posts (MVP)
 - [ ] Infinite scroll (expected feature, but not MVP)
 - [ ] Option to fit more photos on display (bonus feature, if time allows)
 
@@ -74,9 +74,9 @@ the API.
 
 **Objective:** Users have a profile page to see their posts and can connect with other users
 
-- [X] create `Relationship` model
-- [X] jBuilder views for all Profile Components
-- [X] setup `clientActions` and `serverActions`
+- [ ] create `Relationship` model
+- [ ] jBuilder views for all Profile Components
+- [ ] setup `clientActions` and `serverActions`
 - [X] display posts on User's profile page
 
 
@@ -85,23 +85,23 @@ the API.
 **Objective:** All pages have functional navigation bar
 
 - [X] create a basic style guide
-- [X] position elements on the page
+- [ ] position elements on the page
 - [X] add basic colors & styles
 
 ### Phase 5: Upload photos through UI (~1 day)
 
 **Objective:** Users can upload photos and create posts through the UI
 
-- [X] create the form to upload photos
-- [X] finalize the form to submit posts (`postIndexItem` component)
+- [ ] create the form to upload photos
+- [ ] finalize the form to submit posts (`postIndexItem` component)
 
 ### Phase 6: Finalize Styling (~1 day)
 
 **Objective:** Make the site feel more cohesive and awesome.
 
-- [X] Get feedback on my UI from others
-- [X] Refactor HTML classes & CSS rules
-- [X] Add modals, transitions, and other styling flourishes.
+- [ ] Get feedback on my UI from others
+- [ ] Refactor HTML classes & CSS rules
+- [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
 - [ ] Infinite Scroll

@@ -29,8 +29,13 @@ var addLike = function(like) {
 
 var deleteLike = function(like) {
   var post = _posts[like.post_id];
-  var likeIdx = post.likes.indexOf(like);
-  post.likes.splice(likeIdx, 1);
+  var foundIdx;
+  post.likes.forEach(function(postLike, i) {
+    if (postLike.id === like.id) {
+      foundIdx = i ;
+    }
+  });
+  post.likes.splice(foundIdx, 1);
 };
 
 PostStore.all = function () {
@@ -47,22 +52,25 @@ PostStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case PostConstants.POSTS_RECEIVED:
       resetPosts(payload.posts);
+      PostStore.__emitChange();
       break;
     case PostConstants.POST_RECEIVED:
       addPost(payload.post);
+      PostStore.__emitChange();
       break;
     case PostConstants.COMMENT_RECEIVED:
       addComment(payload.comment);
+      PostStore.__emitChange();
       break;
     case PostConstants.LIKE_RECEIVED:
       addLike(payload.like);
+      PostStore.__emitChange();
       break;
     case PostConstants.LIKE_REMOVED:
       deleteLike(payload.like);
+      PostStore.__emitChange();
       break;
-    default:
   }
-  PostStore.__emitChange();
 };
 
 module.exports = PostStore;

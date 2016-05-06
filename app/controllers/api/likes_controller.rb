@@ -21,7 +21,7 @@ class Api::LikesController < ApplicationController
     if @like.destroy
       render :show
     else
-      @errors = favorite.errors.full_messages
+      @errors = @like.errors.full_messages
       render "api/shared/error", status: 422
     end
   end

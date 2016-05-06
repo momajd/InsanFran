@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
     resources :posts, only: [:index, :create, :destroy, :show] do
       resources :comments, only: [:create, :destroy]
+      # TODO: redraw likes
       resources :likes, only: [:create, :destroy]
     end
   end
