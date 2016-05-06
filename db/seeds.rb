@@ -6,12 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+cloudinary_url = "http://res.cloudinary.com/dfqqsmub8/image/upload/w_250,h_250,c_thumb,g_face/"
+
 guest = User.create!([
   {username: "guest", password: "password", name: "Awesome Guest"},
-  {username: "mo_majd", password: "password", name: "Mo Majd"},
-  {username: "d_tanner", password: "password", name: "Danny Tanner"},
-  {username: "g_newsom", password: "password", name: "Gavin Newsom"},
-  {username: "oprah", password: "password", name: "Oprah Winfrey"},
+  {username: "mo_majd", password: "password", name: "Mo Majd", profile_image_url: "#{cloudinary_url + "v1462496049/mrhGtJb3VZCdwP1b_UezVg_oog2mv.jpg"}" },
+  {username: "d_tanner", password: "password", name: "Danny Tanner", profile_image_url: "#{cloudinary_url + "v1462302079/futkleaw2eftnkasj27l.jpg"}" },
+  {username: "g_newsom", password: "password", name: "Gavin Newsom", profile_image_url: "#{cloudinary_url + "gavin-newsom300x200_a0m1mf.jpg"}" },
+  {username: "oprah", password: "password", name: "Oprah Winfrey", profile_image_url: "#{cloudinary_url + "oprah_winfrey_horizontal_a_l_gsv3z8.jpg"}" },
+  {username: "terminator", password: "password", name: "Arnold Schwarzenegger", profile_image_url: "http://goo.gl/aO1eGe"},
+  {username: "dannyglover", password: "password", name: "Danny Glover", profile_image_url: "https://goo.gl/p2zWqs"},
+  {username: "tom_hanks", password: "password", name: "Tom Hanks", profile_image_url: "https://goo.gl/reaXjM"}
+  {username: "jgarcia", password: "password", name: "Jerry Garcia", profile_image_url: "#{cloudinary_url + "v1462500344/jerry-garcia_o9xhcf.jpg"}" },
+  {username: "CSantana", password: "password", name: "Carlost Santana", profile_image_url: "#{cloudinary_url + "v1462500521/carlos-santana-02_exyiid.jpg"}" },
+  {username: "", password: "password", name: "", profile_image_url: "#{cloudinary_url + ""}" },
+  {username: "", password: "password", name: "", profile_image_url: "#{cloudinary_url + ""}" },
+  {username: "", password: "password", name: "", profile_image_url: "#{cloudinary_url + ""}" }
 ])
 
 posts = Post.create!([
