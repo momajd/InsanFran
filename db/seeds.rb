@@ -138,9 +138,9 @@ comments = Comment.create!([
   ])
 
 (1..User.all.length).each do |user_id|
-  #say each user likes 10 posts
+  #say each user likes 15 posts
   post_ids = (1..Post.all.length).to_a
-  10.times do
+  15.times do
     Like.create({user_id: user_id, post_id: post_ids.shuffle.pop})
   end
 end

@@ -59,6 +59,9 @@
   max-height: 250px;
   overflow-y: auto;
   border-radius: 4px;
+  -webkit-box-shadow: 10px 10px 44px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 44px -5px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 44px -5px rgba(0,0,0,0.75);
 }
 
 .user-search-result {
