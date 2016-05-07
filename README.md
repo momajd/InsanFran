@@ -2,7 +2,7 @@
 
 ## [Live Link][heroku]
 
-[heroku]: http://insanfran.herokuapp.com
+[heroku]: http://insanfran.us
 
 InsanFran is a full-stack web application that provides a platform for sharing San Francisco photography. It was inspired by Instagram.
 
@@ -32,7 +32,7 @@ On the frontend, flux cycles are set up to fetch the current user, login, logout
 
 Users can create posts by uploading images. When a post is created through the UI, an action is set off and the post data is sent to the back-end with an ajax POST request. Associations in rails are set up for the post model to have many comments and likes.
 
-Posts are made up of several layers of React Components and are displayed on the feed page. The design of these posts were modeled after clean and minimalist look of Instagram posts.
+Posts are made up of several layers of React Components and are displayed on the feed page. The design of these posts were modeled after the clean look of Instagram posts.
 
 ![Post](/docs/images/post.png)
 
