@@ -19,15 +19,6 @@ var ApiUtil = {
     });
   },
 
-  fetchAllPosts: function(){
-    $.ajax({
-      url: 'api/posts',
-      success: function(posts){
-        ServerActions.receivePosts(posts);
-      }
-    });
-  },
-
   fetchPosts: function(count) {
     $.ajax({
       url: 'api/posts',

@@ -9,10 +9,6 @@ var ClientActions = {
     ApiUtil.fetchUser(userId);
   },
 
-  fetchAllPosts: function() {
-    ApiUtil.fetchAllPosts();
-  },
-
   fetchPosts: function(count) {
     ApiUtil.fetchPosts(count);
   },
