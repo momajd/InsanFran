@@ -18,7 +18,7 @@ guest = User.create!([
   {username: "dannyglover", password: "password", name: "Danny Glover", profile_image_url: "https://goo.gl/p2zWqs"},
   {username: "tom_hanks", password: "password", name: "Tom Hanks", profile_image_url: "https://goo.gl/reaXjM"},
   {username: "jgarcia", password: "password", name: "Jerry Garcia", profile_image_url: "#{cloudinary_url + "v1462500344/jerry-garcia_o9xhcf.jpg"}" },
-  {username: "CSantana", password: "password", name: "Carlost Santana", profile_image_url: "#{cloudinary_url + "v1462500521/carlos-santana-02_exyiid.jpg"}" },
+  {username: "CSantana", password: "password", name: "Carlos Santana", profile_image_url: "#{cloudinary_url + "v1462500521/carlos-santana-02_exyiid.jpg"}" },
   {username: "Twain", password: "password", name: "Mark Twain", profile_image_url: "#{cloudinary_url + "v1462500665/marktwain_cc_img_0_ydsblc.jpg"}" },
   {username: "lucas_george", password: "password", name: "George Lucas", profile_image_url: "#{cloudinary_url + "v1462500793/latest_whl3aj.jpg"}" }
 ])
@@ -114,10 +114,10 @@ posts = Post.create!([
   user_id: rand_id},
   {image_url: "https://images.unsplash.com/photo-1446160657592-4782fb76fb99?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=8f67d9ea1f1ef3c24104eccad00b3eba",
   user_id: rand_id},
-  {image_url: "https://images.unsplash.com/photo-1445264157214-a120770384d3?crop=entropy&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1450",
-  user_id: rand_id},
   {image_url: "http://farm4.static.flickr.com/3025/5698564979_1686a328ef_o.gif",
   user_id: 1},
+  {image_url: "https://images.unsplash.com/photo-1445264157214-a120770384d3?crop=entropy&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1450",
+  user_id: rand_id},
   {image_url: "https://images.unsplash.com/14/unsplash_5244808e6b835_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=12826d4d6562304e24d499cfec356281",
   user_id: rand_id}
 ])
@@ -142,8 +142,11 @@ comments = Comment.create!([
   {user_id: 7, post_id: 35, body: "I'm too old for this.."},
   {user_id: rand_id, post_id: 35, body: "Ha! Very funny"},
   {user_id: rand_id, post_id: 35, body: "I can't believe he said that"},
-  {user_id: 8, post_id: 36, body: "Commenting on Mo's app brings me joy"},
-  {user_id: 6, post_id: 34, body: "COME ON I'M HERE DO IT!!!!"}
+  {user_id: 8, post_id: 36, body: "Mo's app is fun :)"},
+  {user_id: 6, post_id: 34, body: "I'll be back"},
+  {user_id: 7, post_id: 34, body: "smh..."},
+  {user_id: 3, post_id: 33, body: "Very clean!"},
+  {user_id: rand_id, post_id: 33, body: "woaahhhhh"}
   ])
 
 (1..User.all.length).each do |user_id|
