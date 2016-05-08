@@ -5,7 +5,7 @@ var Post = require('./post/Post');
 
 var Index = React.createClass({
   getInitialState: function() {
-    return {posts: [], scrollCount: 1} ;
+    return {posts: [], scrollCount: 1, time: Date.now()} ;
   },
 
   onPostChange: function() {
@@ -14,8 +14,9 @@ var Index = React.createClass({
 
   componentDidMount: function() {
     this.postListener = PostStore.addListener(this.onPostChange);
+    // for infinite scroll
     this.scrollListener = window.addEventListener("scroll", this.addPosts);
-    ClientActions.fetchAllPosts();
+    ClientActions.fetchPosts();
   },
 
   componentWillUnmount: function() {
@@ -23,7 +24,13 @@ var Index = React.createClass({
   },
 
   addPosts: function() {
-    // TODO
+    if (window.innerHeight + window.scrollY + 1 >= document.body.offsetHeight &&
+      // need to make sure we don't load all at once
+        this.state.time + 1000 < Date.now() ) {
+      this.state.scrollCount += 1;
+      this.state.time = Date.now();
+      ClientActions.fetchPosts(this.state.scrollCount);
+    }
   },
 
   render: function() {

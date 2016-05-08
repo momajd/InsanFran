@@ -23,16 +23,17 @@ var ApiUtil = {
     $.ajax({
       url: 'api/posts',
       success: function(posts){
-        ServerActions.receiveAllPosts(posts);
+        ServerActions.receivePosts(posts);
       }
     });
   },
 
-  fetchPosts: function() {
+  fetchPosts: function(count) {
     $.ajax({
       url: 'api/posts',
+      data: {count: count},
       success: function(posts){
-        ServerActions.receiveAllPosts(posts);
+        ServerActions.receivePosts(posts);
       }
     });
   },

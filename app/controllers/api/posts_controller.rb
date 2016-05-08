@@ -2,7 +2,9 @@ class Api::PostsController < ApplicationController
 
   def index
     # TODO: will need to filter posts; just display all for now
-    @posts = Post.all
+    # @posts = Post.all
+    # use 3 posts for each count
+    @posts = Post.limit(count * 3).order('id desc')
   end
 
   def create
@@ -29,5 +31,10 @@ class Api::PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:image_url)
+  end
+
+  def count
+    # for the first render, use a count of 1
+    params[:count] ? params[:count].to_i : 1
   end
 end
