@@ -51,7 +51,7 @@ UserIndexStore.findById = function (id) {
   return _users[id];
 };
 
-// TODO: filter should be done on the back end 
+// TODO: filter should be done on the back end
 UserIndexStore.filterSearch = function(searchInput) {
   var searchResults = [];
 
@@ -67,18 +67,21 @@ UserIndexStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case UserIndexConstants.USERS_RECEIVED:
       resetUsers(payload.users);
+      UserIndexStore.__emitChange();
       break;
     case UserIndexConstants.USER_RECEIVED:
       resetUser(payload.user);
+      UserIndexStore.__emitChange();
       break;
     case UserIndexConstants.FOLLOW_RECEIVED:
       addFollower(payload.relationship);
+      UserIndexStore.__emitChange();
       break;
     case UserIndexConstants.FOLLOW_REMOVED:
       removeFollower(payload.relationship);
+      UserIndexStore.__emitChange();
       break;
   }
-  UserIndexStore.__emitChange();
 };
 
 module.exports = UserIndexStore;
