@@ -52,6 +52,22 @@ has_many :passive_relationships, class_name: "Relationship",
 has_many :following, through: :active_relationships, source: :followed
 has_many :followers, through: :passive_relationships, source: :follower
 ```
+
+The `posts_controller` gives only posts that were created by users that are followed by the current user.
+
+```Ruby
+#posts_controller.rb
+
+def index
+  # activerecord magic
+  following_ids = current_user.following_ids
+
+  #limit to 3 posts at a time and order descending so new posts are first
+  @posts = Post.where("user_id IN (?) OR user_id = ?",
+          following_ids, current_user.id).limit(count * 3).order('id desc')
+end
+```
+
 On the frontend, the `FollowButton` component triggers a client action that either creates or destroys a relationship.
 
 ### User profile page
@@ -67,8 +83,8 @@ The user page displays user information and all of that users' posts. Each post 
 - React
 
 ## Future Features (listed by priority)
-- Infinite Scroll
-- Masonry
-- Add videos
-- Add tags
-- Add descriptions to posts
+- [X] Infinite Scroll
+- [ ] Masonry
+- [ ] Add videos
+- [ ] Add tags
+- [ ] Add descriptions to posts
