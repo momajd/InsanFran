@@ -114,6 +114,8 @@ posts = Post.create!([
   user_id: rand_id},
   {image_url: "https://images.unsplash.com/photo-1445264157214-a120770384d3?crop=entropy&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1450",
   user_id: rand_id},
+  {image_url: "http://farm4.static.flickr.com/3025/5698564979_1686a328ef_o.gif",
+  user_id: 1},
   {image_url: "https://images.unsplash.com/14/unsplash_5244808e6b835_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=12826d4d6562304e24d499cfec356281",
   user_id: rand_id}
 ])
@@ -127,14 +129,18 @@ comments = Comment.create!([
   {user_id: rand_id, post_id: 42, body: "hello world"},
   {user_id: rand_id, post_id: 42, body: "hey there"},
   {user_id: rand_id, post_id: 41, body: "beautiful"},
+  {user_id: rand_id, post_id: 41, body: "lorem ipsum"},
   {user_id: rand_id, post_id: 41, body: "great picture"},
   {user_id: rand_id, post_id: 40, body: "Did you take that on a nikon?"},
   {user_id: rand_id, post_id: 40, body: "ok ok pretty cool pretty cool"},
   {user_id: rand_id, post_id: 40, body: "wooooot"},
   {user_id: rand_id, post_id: 39, body: "lorem ipsum"},
-  {user_id: rand_id, post_id: 38, body: "lorem ipsum"},
   {user_id: rand_id, post_id: 37, body: "lorem ipsum"},
-  {user_id: rand_id, post_id: 36, body: "lorem ipsum"}
+  {user_id: rand_id, post_id: 36, body: "lorem ipsum"},
+  {user_id: 7, post_id: 35, body: "I'm too old for this.."},
+  {user_id: rand_id, post_id: 35, body: "Ha! Very funny"},
+  {user_id: rand_id, post_id: 35, body: "I can't believe he said that"},
+  {user_id: rand_id, post_id: 36, body: "Commenting on Mo's app brings me joy"}
   ])
 
 (1..User.all.length).each do |user_id|
@@ -147,8 +153,8 @@ comments = Comment.create!([
 end
 
 (1..User.all.length).each do |follower_id|
-  #say each user follows between 5 and 10 people
-  total_following = rand(5..10)
+  #say each user follows between 7 and 10 people
+  total_following = rand(7..10)
 
   users = (1..User.all.length).to_a - [follower_id]
 

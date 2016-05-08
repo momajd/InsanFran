@@ -1,10 +1,12 @@
 class Api::PostsController < ApplicationController
 
   def index
-    # TODO: will need to filter posts; just display all for now
-    # @posts = Post.all
-    # use 3 posts for each count
-    @posts = Post.limit(count * 3).order('id desc')
+    # activerecord magic
+    following_ids = current_user.following_ids
+
+    #limit to 3 posts at a time and order descending so new posts are first
+    @posts = Post.where("user_id IN (?) OR user_id = ?",
+            following_ids, current_user.id).limit(count * 3).order('id desc')
   end
 
   def create
