@@ -4,10 +4,6 @@ var ClientActions = require('../../actions/client_actions');
 
 var ProfilePicture = React.createClass({
 
-  getInitialState: function() {
-    return {disabled: this.props.user.id !== this.currentUserId() };
-  },
-
   handleUploadPicture: function (e) {
     e.preventDefault();
     if (this.props.user.id !== this.currentUserId() ) {return;}

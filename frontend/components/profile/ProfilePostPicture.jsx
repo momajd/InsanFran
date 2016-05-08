@@ -18,7 +18,7 @@ var ProfilePostPicture = React.createClass({
 
   componentDidMount: function() {
     this.postListener = PostStore.addListener(this.onChange);
-    ClientActions.fetchAllPosts();
+    ClientActions.fetchPost(this.props.post.id);
     // TODO: replace with fetchPost when written
   },
 

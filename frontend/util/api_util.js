@@ -28,6 +28,24 @@ var ApiUtil = {
     });
   },
 
+  fetchPosts: function() {
+    $.ajax({
+      url: 'api/posts',
+      success: function(posts){
+        ServerActions.receiveAllPosts(posts);
+      }
+    });
+  },
+
+  fetchPost: function(postId) {
+    $.ajax({
+      url: 'api/posts/' + postId,
+      success: function(post) {
+        ServerActions.receivePost(post);
+      }
+    });
+  },
+
   createPost: function(post) {
     $.ajax({
       url: "/api/posts/",

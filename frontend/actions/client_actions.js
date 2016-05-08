@@ -13,7 +13,13 @@ var ClientActions = {
     ApiUtil.fetchAllPosts();
   },
 
-  // TODO: write fetchPost function (see ProfilePostPicture component)
+  fetchPosts: function(count) {
+    ApiUtil.fetchPosts(count);
+  },
+
+  fetchPost: function(postId) {
+    ApiUtil.fetchPost(postId);
+  },
 
   createPost: function(post) {
     ApiUtil.createPost(post);

@@ -5,7 +5,7 @@ var Post = require('./post/Post');
 
 var Index = React.createClass({
   getInitialState: function() {
-    return {posts: PostStore.all()} ;
+    return {posts: [], scrollCount: 1} ;
   },
 
   onPostChange: function() {
@@ -14,11 +14,16 @@ var Index = React.createClass({
 
   componentDidMount: function() {
     this.postListener = PostStore.addListener(this.onPostChange);
+    this.scrollListener = window.addEventListener("scroll", this.addPosts);
     ClientActions.fetchAllPosts();
   },
 
   componentWillUnmount: function() {
     this.postListener.remove();
+  },
+
+  addPosts: function() {
+    // TODO
   },
 
   render: function() {
