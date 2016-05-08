@@ -7,8 +7,14 @@ var UserStore = require('../../stores/user_store');
 var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin, CurrentUserState],
 
+	getInitialState: function() {
+		return {username: "", password: ""};
+	},
+
   handleLogin: function(e){
-    e.preventDefault();
+		// there will be no event for the guest login
+		if (e) {e.preventDefault(); }
+
     UserActions.login({
       username: this.state.username,
       password: this.state.password
@@ -25,21 +31,46 @@ var LoginForm = React.createClass({
 
   handleGuest: function(e){
     e.preventDefault();
-    UserActions.login({
-      username: "guest",
-      password: "password"
-    });
+
+		this.setState({username: "", password: ""});
+
+		var username = "guest".split("");
+		var password = "password".split("");
+		var time = 50;
+
+		var self = this;
+		username.forEach(function(letter) {
+			time += 100;
+			setTimeout(function() {
+				self.setState({username: self.state.username + letter});
+			}, time);
+		});
+
+		time += 400;
+
+		password.forEach(function(letter) {
+			time += 100;
+			setTimeout(function() {
+				self.setState({password: self.state.password + letter});
+			}, time);
+		});
+
+		time += 400;
+
+		setTimeout(this.handleLogin, time);
   },
 
 	errors: function(){
 		var self = this;
-		return (<ul>
-		{
-			Object.keys(this.state.userErrors).map(function(key, i){
-				return (<li key={i} className="error-message">{self.state.userErrors[key]}</li>);
-			})
+		if (this.state.userErrors) {
+			return (<ul>
+				{
+					Object.keys(this.state.userErrors).map(function(key, i){
+						return (<li key={i} className="error-message">{self.state.userErrors[key]}</li>);
+					})
+				}
+			</ul>);
 		}
-		</ul>);
 	},
 
 	form: function(){

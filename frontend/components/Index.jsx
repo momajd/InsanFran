@@ -25,10 +25,8 @@ var Index = React.createClass({
   },
 
   addPosts: function() {
-    if (window.innerHeight + window.scrollY + 1 >= document.body.offsetHeight &&
-      // need to make sure we don't load all at once
-        this.state.time + 1000 < Date.now() ) {
-          console.log(this.state.scrollCount);
+    if (window.innerHeight + window.scrollY + 1 >= document.body.offsetHeight) {
+          // console.log(this.state.scrollCount);
       this.state.scrollCount += 1;
       this.state.time = Date.now();
       ClientActions.fetchPosts(this.state.scrollCount);
