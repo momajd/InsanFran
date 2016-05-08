@@ -53,7 +53,7 @@ has_many :following, through: :active_relationships, source: :followed
 has_many :followers, through: :passive_relationships, source: :follower
 ```
 
-The `posts_controller` gives only posts that were created by users that are followed by the current user.
+On the main feed, the `posts_controller` sends only posts of users that are followed by the current user.
 
 ```Ruby
 #posts_controller.rb

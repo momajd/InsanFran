@@ -48,6 +48,8 @@ posts = Post.create!([
   user_id: rand_id},
   {image_url: "https://images.unsplash.com/photo-1429479196389-7d1afeaa2d21?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=928555934369eaa7769d90f568f45828",
   user_id: rand_id},
+  {image_url: "http://phlearn.com/wp-content/uploads/2012/08/cinemagraph.gif",
+  user_id: 2},
   {image_url: "https://images.unsplash.com/photo-1461440728156-f48806552a74?crop=entropy&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1450",
   user_id: rand_id},
   {image_url: "https://images.unsplash.com/photo-1461530927168-44328109da52?crop=entropy&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1450",
@@ -140,7 +142,8 @@ comments = Comment.create!([
   {user_id: 7, post_id: 35, body: "I'm too old for this.."},
   {user_id: rand_id, post_id: 35, body: "Ha! Very funny"},
   {user_id: rand_id, post_id: 35, body: "I can't believe he said that"},
-  {user_id: rand_id, post_id: 36, body: "Commenting on Mo's app brings me joy"}
+  {user_id: 8, post_id: 36, body: "Commenting on Mo's app brings me joy"},
+  {user_id: 6, post_id: 34, body: "COME ON I'M HERE DO IT!!!!"}
   ])
 
 (1..User.all.length).each do |user_id|
