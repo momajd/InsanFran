@@ -16,11 +16,6 @@ var SearchBar = React.createClass({
     ClientActions.fetchAllUsers();
   },
 
-  // TODO: remove if can't get onBlur to work
-  onBlur: function() {
-    this.setState({search: ""});
-  },
-
   resetOnClick: function(e) {
     this.setState({search: ""});
   },
@@ -62,6 +57,12 @@ var SearchBar = React.createClass({
   }
 
 });
-// onBlur={this.onBlur}>
-
 module.exports = SearchBar;
+
+
+// TODO: remove if can't get onBlur to work
+// onBlur: function() {
+//   this.setState({search: ""});
+// },
+
+// onBlur={this.onBlur}>

@@ -19,11 +19,11 @@ var UserActions = require('./actions/user_actions');
 UserActions.fetchCurrentUser();
 
 // TODO: remove after testing
-window.ApiUtil = require('./util/api_util');
-window.UserStore = require('./stores/user_store');
-window.UserIndexStore = require('./stores/user_index_store');
-window.PostStore = require('./stores/post_store');
-window.ClientActions = require('./actions/client_actions');
+// window.ApiUtil = require('./util/api_util');
+// window.UserStore = require('./stores/user_store');
+// window.UserIndexStore = require('./stores/user_index_store');
+// window.PostStore = require('./stores/post_store');
+// window.ClientActions = require('./actions/client_actions');
 
 var router = (
   <Router history={hashHistory}>
