@@ -1,6 +1,7 @@
 var React = require('react');
 var UserIndexStore = require('../stores/user_index_store');
 var ClientActions = require('../actions/client_actions');
+var ProfilePicture = require('./profile/ProfilePicture');
 
 var SearchBar = React.createClass({
 
@@ -26,10 +27,10 @@ var SearchBar = React.createClass({
     if (this.state.search !== "" ) {
       return userResults.map(function(user) {
         return (
-          <a key={user.id}
-             href={"#/users/" + user.id}>
+          <a key={user.id} href={"#/users/" + user.id}>
 
             <div className="user-search-result">
+              <ProfilePicture user={user} />
               {user.username}
             </div>
           </a>
