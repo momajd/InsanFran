@@ -25,6 +25,3 @@ var UploadButton = React.createClass({
 });
 
 module.exports = UploadButton;
-
-// TODO: delete
-// <button onClick={this.upload}>Upload Image</button>

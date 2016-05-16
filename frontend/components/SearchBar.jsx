@@ -58,11 +58,3 @@ var SearchBar = React.createClass({
 
 });
 module.exports = SearchBar;
-
-
-// TODO: remove if can't get onBlur to work
-// onBlur: function() {
-//   this.setState({search: ""});
-// },
-
-// onBlur={this.onBlur}>

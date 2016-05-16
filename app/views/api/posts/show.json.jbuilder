@@ -17,5 +17,3 @@ json.likes @post.likes do |like|
   json.user like.user.username
   json.post_id  like.post_id
 end
-
-# TODO: ADD TIME AGO

@@ -70,12 +70,9 @@ var ApiUtil = {
   },
 
   deleteLike: function(like, success) {
-
-    // TODO remove data and like.id from url
     $.ajax({
       url: "api/posts/" + like.post_id + "/likes/" + like.id,
       type: "DELETE",
-      data: {like: like},
       success: success
     });
   },

@@ -15,7 +15,7 @@ class Api::LikesController < ApplicationController
   def destroy
     @like = Like.find_by(
       user_id: current_user.id,
-      post_id: like_params[:post_id]
+      post_id: params[:post_id]
     )
 
     if @like.destroy
