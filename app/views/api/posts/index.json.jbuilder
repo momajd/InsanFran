@@ -16,6 +16,7 @@ json.array! @posts do |post|
   json.user_id post.user_id
   json.name post.user.name
   json.username post.user.username
+  json.user post.user
   json.created_time_ago time
 
   json.comments post.comments do |comment|

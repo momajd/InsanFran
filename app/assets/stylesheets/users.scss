@@ -32,16 +32,11 @@
   -webkit-filter: grayscale(100%);
 }
 
-.profile-image-button {
-  cursor: pointer;
+.profile-image {
   width: 200px;
   height: 200px;
-}
-
-.profile-image {
-  width: auto;
-  height: 100%;
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .user-show {
