@@ -34,6 +34,8 @@ Users can create posts by uploading images. When a post is created through the U
 
 Posts are made up of several layers of React Components and are displayed on the feed page. The design of these posts were modeled after the clean look of Instagram posts.
 
+Cloudinary API is used to host and transform images.
+
 ![Post](/docs/images/post.png)
 
 ### Relationship model for Followers
