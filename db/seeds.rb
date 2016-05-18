@@ -9,7 +9,7 @@
 cloudinary_url = "http://res.cloudinary.com/dfqqsmub8/image/upload/w_250,h_250,c_thumb,g_face/"
 
 guest = User.create!([
-  {username: "guest", password: "password", name: "Awesome Guest"},
+  {username: "guest", password: "password", name: "Awesome Guest", profile_image_url: "#{cloudinary_url + "v1463611058/ProfilePlaceholder_u4vtq1.jpg"}"},
   {username: "mo_majd", password: "password", name: "Mo Majd", profile_image_url: "#{cloudinary_url + "v1462496049/mrhGtJb3VZCdwP1b_UezVg_oog2mv.jpg"}" },
   {username: "d_tanner", password: "password", name: "Danny Tanner", profile_image_url: "#{cloudinary_url + "v1462302079/futkleaw2eftnkasj27l.jpg"}" },
   {username: "g_newsom", password: "password", name: "Gavin Newsom", profile_image_url: "#{cloudinary_url + "gavin-newsom300x200_a0m1mf.jpg"}" },
@@ -157,10 +157,10 @@ comments = Comment.create!([
   {user_id: rand_id, post_id: 10, body: "great seed data"},
   {user_id: rand_id, post_id: 20, body: "Ahhh so nice"},
   {user_id: rand_id, post_id: 20, body: "Yes it is"},
-  {user_id: rand_id, post_id: 20, body: "Sono venuto qui l'anno"},
+  {user_id: rand_id, post_id: 20, body: "Sono venuto qui"},
   {user_id: rand_id, post_id: 23, body: "Hello Hello"},
-  {user_id: rand_id, post_id: 23, body: "I don't know why you say Goodbye"},
-  {user_id: rand_id, post_id: 23, body: "I say Hello"},
+  {user_id: rand_id, post_id: 23, body: "I don't know why you say.."},
+  {user_id: rand_id, post_id: 23, body: "goodbye, I say hello"},
   {user_id: rand_id, post_id: 11, body: "Hmmm I don't know about that"},
   {user_id: rand_id, post_id: 11, body: "LOL OMG"},
   {user_id: rand_id, post_id: 20, body: "You may say I'm a dreamer.."},
