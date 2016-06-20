@@ -62,10 +62,23 @@
 .index {
   display: flex;
   flex-direction: column-reverse; // display latest posts first
+  align-items: center;
   margin: auto;
   max-width: 600px;
   width: 100%;
   padding-top: 60px;
+}
+
+.fa-spinner {
+  color: gray;
+}
+
+.welcome-message {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: gray;
+  text-align: center;
 }
 
 .comment-box {

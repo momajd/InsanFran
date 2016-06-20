@@ -25,8 +25,9 @@ var Index = React.createClass({
   },
 
   addPosts: function() {
-    if (window.innerHeight + window.scrollY + 1 >= document.body.offsetHeight) {
-          // console.log(this.state.scrollCount);
+    if (window.innerHeight + window.scrollY + 1 >= document.body.offsetHeight &&
+      this.state.time + 1000 < Date.now() ) {
+
       this.state.scrollCount += 1;
       this.state.time = Date.now();
       ClientActions.fetchPosts(this.state.scrollCount);
@@ -37,9 +38,21 @@ var Index = React.createClass({
     var posts = this.state.posts.map(function(post) {
       return (<Post key={post.id} post={post} />);
     });
+    var spinner = <i className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>;
+    var newUserMessage;
+
+    console.log(posts.length, this.state.scrollCount);
+    if (posts.length === 0 && this.state.time + 10 < Date.now()) {
+      spinner = null;
+      newUserMessage = <h1 className="welcome-message">
+        Welcome! Looks like you're not following anyone.
+        Try searching for some users in the search bar</h1>;
+    }
 
     return (
       <div className="index">
+        {newUserMessage}
+        {spinner}
         {posts}
       </div>
     );
