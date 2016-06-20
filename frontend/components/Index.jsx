@@ -49,7 +49,7 @@ var Index = React.createClass({
       spinner = null;
       newUserMessage = <h1 className="welcome-message">
         Welcome! Looks like you're not following anyone.
-        Try searching for some users in the search bar</h1>;
+        Try searching for some users in the search bar or posting a photo.</h1>;
     }
 
     return (
