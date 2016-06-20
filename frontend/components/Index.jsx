@@ -41,7 +41,6 @@ var Index = React.createClass({
     var spinner = <i className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>;
     var newUserMessage;
 
-    console.log(posts.length, this.state.scrollCount);
     if (posts.length === 0 && this.state.time + 10 < Date.now()) {
       spinner = null;
       newUserMessage = <h1 className="welcome-message">
