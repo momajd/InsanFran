@@ -25,12 +25,15 @@ var Index = React.createClass({
   },
 
   addPosts: function() {
-    if (window.innerHeight + window.scrollY + 1 >= document.body.offsetHeight &&
-      this.state.time + 1000 < Date.now() ) {
+    if (window.innerHeight + window.scrollY + 1 >= document.body.offsetHeight
+      && this.state.time + 1000 < Date.now() ) {
+        // show spinner for 1 sec; is there a way to match the loading time?
+        $('.fa-spinner').show();
+        setTimeout(function() {$('.fa-spinner').hide() ;}, 1000);
 
-      this.state.scrollCount += 1;
-      this.state.time = Date.now();
-      ClientActions.fetchPosts(this.state.scrollCount);
+        this.state.scrollCount += 1;
+        this.state.time = Date.now();
+        ClientActions.fetchPosts(this.state.scrollCount);
     }
   },
 
@@ -38,9 +41,10 @@ var Index = React.createClass({
     var posts = this.state.posts.map(function(post) {
       return (<Post key={post.id} post={post} />);
     });
-    var spinner = <i className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>;
-    var newUserMessage;
 
+    var spinner = <i className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>;
+
+    var newUserMessage;
     if (posts.length === 0 && this.state.time + 10 < Date.now()) {
       spinner = null;
       newUserMessage = <h1 className="welcome-message">
