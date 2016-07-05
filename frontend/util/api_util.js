@@ -50,7 +50,6 @@ var ApiUtil = {
   },
 
   createComment: function(comment) {
-    console.log(comment);
     $.ajax({
       url: "api/posts/" + comment.post_id + "/comments",
       type: "POST",

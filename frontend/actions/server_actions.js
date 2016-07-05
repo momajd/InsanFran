@@ -32,7 +32,6 @@ var ServerActions = {
   },
 
   receiveComment: function(comment) {
-    console.log(comment);
     AppDispatcher.dispatch({
       actionType: PostConstants.COMMENT_RECEIVED,
       comment: comment
