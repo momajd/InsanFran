@@ -22,6 +22,16 @@ var addComment = function(comment) {
   post.comments.push(comment);
 };
 
+var deleteComment = function(comment) {
+  var post = _posts[comment.post_id];
+
+  for (var i = 0; i < post.comments.length; i++) {
+    if (post.comments[i].id === comment.id) {
+      return post.comments.splice(i, 1);
+    }
+  }
+};
+
 var addLike = function(like) {
   var post = _posts[like.post_id];
   post.likes.push(like);
@@ -60,6 +70,10 @@ PostStore.__onDispatch = function (payload) {
       break;
     case PostConstants.COMMENT_RECEIVED:
       addComment(payload.comment);
+      PostStore.__emitChange();
+      break;
+    case PostConstants.COMMENT_REMOVED:
+      deleteComment(payload.comment);
       PostStore.__emitChange();
       break;
     case PostConstants.LIKE_RECEIVED:

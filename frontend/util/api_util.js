@@ -66,7 +66,9 @@ var ApiUtil = {
       url: "api/posts/" + comment.post_id + "/comments/" + comment.id,
       type: "DELETE",
       data: {comment: comment},
-      success: function () { }
+      success: function (commentData) {
+        ServerActions.removeComment(commentData);
+      }
     });
   },
 

@@ -39,6 +39,13 @@ var ServerActions = {
     });
   },
 
+  removeComment: function(comment) {
+    AppDispatcher.dispatch({
+      actionType: PostConstants.COMMENT_REMOVED,
+      comment: comment
+    });
+  },
+
   receiveFollow: function(relationship) {
     AppDispatcher.dispatch({
       actionType: UserIndexConstants.FOLLOW_RECEIVED,

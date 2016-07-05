@@ -25,6 +25,10 @@ var ClientActions = {
     ApiUtil.createComment(comment);
   },
 
+  deleteComment: function(comment) {
+    ApiUtil.deleteComment(comment);
+  },
+
   createFollow: function(relationship) {
     ApiUtil.createFollow(relationship);
   },
