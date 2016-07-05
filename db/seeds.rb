@@ -126,8 +126,8 @@ posts = Post.create!([
 
 comments = Comment.create!([
   {user_id: rand_id, post_id: 44, body: "what a cool thing"},
-  {user_id: rand_id, post_id: 44, body: "lorem ipsum"},
-  {user_id: rand_id, post_id: 43, body: "woahhh very cool"},
+  {user_id: 1, post_id: 44, body: "lorem ipsum"},
+  {user_id: 1, post_id: 43, body: "woahhh very cool"},
   {user_id: rand_id, post_id: 43, body: "I've been there before"},
   {user_id: rand_id, post_id: 43, body: "Why wasn't I invited?"},
   {user_id: rand_id, post_id: 42, body: "hello world"},
@@ -165,11 +165,16 @@ comments = Comment.create!([
   {user_id: rand_id, post_id: 11, body: "LOL OMG"},
   {user_id: rand_id, post_id: 20, body: "You may say I'm a dreamer.."},
   {user_id: rand_id, post_id: 20, body: "but I'm not the only one.."},
-  {user_id: rand_id, post_id: 24, body: "Bernie 2016"},
-  {user_id: rand_id, post_id: 24, body: "Really!?!?"},
+  {user_id: 8, post_id: 24, body: "Bernie 2016"},
+  {user_id: 6, post_id: 24, body: "Really!?!?"},
   {user_id: rand_id, post_id: 45, body: "Dude, that is NYC"},
   {user_id: rand_id, post_id: 45, body: "Not cool!"},
   {user_id: rand_id, post_id: 45, body: "What's wrong with NY??"},
+  {user_id: 1, post_id: 47, body: "Hey, that's pretty nice"},
+  {user_id: 1, post_id: 47, body: "Actually, very nice"},
+  {user_id: rand_id, post_id: 47, body: "I agree"},
+  {user_id: 1, post_id: 46, body: "Hello World"},
+  {user_id: 1, post_id: 45, body: "Yay, another comment"},
   ])
 
 (1..User.all.length).each do |user_id|
