@@ -22,6 +22,12 @@ var CommentInput = React.createClass({
     this.setState({body: ""});
   },
 
+  handleDelete: function() {
+    var commentData = {
+      user_id: UserStore.currentUser().id
+    };
+  },
+
   render: function () {
     return (
       <div>

@@ -53,7 +53,7 @@ module.exports = FollowButton;
 // },
 
 // ran into bug with using listener on the UserIndexStore (the listener was
-// not set off on the before the inital render of the button, so the button
+// not set off before the inital render of the button, so the button
 // would always start as 'Follow') This way ensures the button will receive
 // the correct props before rendering
 // componentWillReceiveProps: function(newProps) {

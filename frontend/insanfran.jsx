@@ -18,7 +18,7 @@ var UserShow = require('./components/profile/UserShow');
 var UserActions = require('./actions/user_actions');
 UserActions.fetchCurrentUser();
 
-// window.ApiUtil = require('./util/api_util');
+window.ApiUtil = require('./util/api_util');
 window.UserStore = require('./stores/user_store');
 // window.UserIndexStore = require('./stores/user_index_store');
 // window.PostStore = require('./stores/post_store');

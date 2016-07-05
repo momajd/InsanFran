@@ -50,6 +50,7 @@ var ApiUtil = {
   },
 
   createComment: function(comment) {
+    console.log(comment);
     $.ajax({
       url: "api/posts/" + comment.post_id + "/comments",
       type: "POST",
@@ -57,6 +58,15 @@ var ApiUtil = {
       success: function (commentData) {
         ServerActions.receiveComment(commentData);
       }
+    });
+  },
+
+  deleteComment: function(comment) {
+    $.ajax({
+      url: "api/posts/" + comment.post_id + "/comments/" + comment.id,
+      type: "DELETE",
+      data: {comment: comment},
+      success: function () { }
     });
   },
 
