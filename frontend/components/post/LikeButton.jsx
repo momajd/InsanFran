@@ -4,7 +4,6 @@ var UserStore = require('../../stores/user_store');
 var PostStore = require('../../stores/post_store');
 
 var LikeButton = React.createClass({
-  // removed listener on the store since we can just use the props
 
   _isLiked: function() {
     var currentUser = UserStore.currentUser();

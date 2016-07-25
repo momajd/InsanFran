@@ -26,10 +26,14 @@
   width: auto;
   height: 100%;
   cursor: pointer;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }
 
 .profile-post-picture > img:hover {
-  -webkit-filter: grayscale(100%);
+  opacity: .7;
+  -webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .profile-image {
