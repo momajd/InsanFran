@@ -134,6 +134,13 @@
   height: 30px;
   width: 32px;
   cursor: pointer;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.like-button:hover {
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .filled-heart {
