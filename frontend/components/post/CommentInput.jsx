@@ -1,11 +1,9 @@
 var React = require('react');
 var ClientActions = require('../../actions/client_actions');
 var UserStore = require('../../stores/user_store');
-var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var CommentInput = React.createClass({
-  mixins: [LinkedStateMixin],
-
+  
   getInitialState: function() {
     return { body: ""};
   },
@@ -28,6 +26,10 @@ var CommentInput = React.createClass({
     };
   },
 
+  handleBodyChange: function(e) {
+    this.setState({body: e.target.value});
+  },
+
   render: function () {
     return (
       <div>
@@ -36,7 +38,8 @@ var CommentInput = React.createClass({
             className="comment-field"
             type="text"
             placeholder="Add a comment..."
-            valueLink={this.linkState('body')} />
+            onChange={this.handleBodyChange}
+            value={this.state.body} />
         </form>
       </div>
     );
