@@ -124,8 +124,16 @@ var LoginForm = React.createClass({
 	},
 
 	componentDidMount: function() {
-    $('.login-content').hide();
-		$('.login-content').fadeIn("slow");
+    $('.login-logo, .login-message, .login-form').hide();
+		$('.login-logo').fadeIn("slow");
+
+		setTimeout(function() {
+			$('.login-message').fadeIn("slow");
+		}, 250);
+		
+		setTimeout(function() {
+			$('.login-form').fadeIn("slow");
+		}, 500);
 	},
 
 	render: function(){
