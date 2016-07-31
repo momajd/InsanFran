@@ -130,7 +130,7 @@ var LoginForm = React.createClass({
 		setTimeout(function() {
 			$('.login-message').fadeIn("slow");
 		}, 250);
-		
+
 		setTimeout(function() {
 			$('.login-form').fadeIn("slow");
 		}, 500);
