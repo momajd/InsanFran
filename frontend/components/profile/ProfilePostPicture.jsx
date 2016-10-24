@@ -1,15 +1,15 @@
 var React = require('react');
 var Modal = require('react-modal');
 var ModalPostInfo = require('../profile/ModalPostInfo');
-var CommentIndex = require('../post/CommentIndex');
 var PostStore = require('../../stores/post_store');
+var ImageOverlay = require('./ImageOverlay');
 var ClientActions = require('../../actions/client_actions');
 
 
 var ProfilePostPicture = React.createClass({
 
   getInitialState: function () {
-    return {modalOpen: false, post: {} };
+    return {modalOpen: false, post: {}, hover: false };
   },
 
   onChange: function() {
@@ -25,7 +25,7 @@ var ProfilePostPicture = React.createClass({
     this.postListener.remove();
   },
 
-  _handleClick: function() {
+  handleClick: function() {
     this.setState({modalOpen: true});
   },
 
@@ -33,10 +33,27 @@ var ProfilePostPicture = React.createClass({
     this.setState({modalOpen: false});
   },
 
+  mouseOver: function() {
+    this.setState({hover: true});
+  },
+
+  mouseLeave: function(e) {
+    this.setState({hover: false});
+  },
+
   render: function() {
+    var overlay;
+    if (this.state.hover) {
+      overlay = (
+        <ImageOverlay handleClick={this.handleClick} mouseLeave={this.mouseLeave}
+          post={this.props.post}/>
+      );
+    }
+
     return (
-      <div className="profile-post-picture">
-        <img src={this.props.post.image_url} onClick={this._handleClick}/>
+      <div className="profile-post-picture" onMouseOver={this.mouseOver}>
+        <img src={this.props.post.image_url} onClick={this.handleClick}/>
+        {overlay}
 
         <Modal
           isOpen={this.state.modalOpen}

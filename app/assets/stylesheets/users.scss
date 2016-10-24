@@ -14,6 +14,7 @@
 }
 
 .profile-post-picture {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 300px;
@@ -30,10 +31,24 @@
 	transition: .3s ease-in-out;
 }
 
-.profile-post-picture > img:hover {
-  opacity: .7;
-  -webkit-transform: scale(1.1);
-	transform: scale(1.1);
+.profile-post-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.overlay-stats {
+  width: 120px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .profile-image {
